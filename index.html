@@ -1350,14 +1350,15 @@
   <img src="exp-logo-white.png" alt="eXp Realty" style="height:40px;width:auto;opacity:0.58;display:block;flex-shrink:0;"/>
   <!-- Thin gold vertical divider -->
   <div style="width:1px;height:44px;background:linear-gradient(to bottom,transparent,rgba(212,175,114,0.45),transparent);margin:0 22px;flex-shrink:0;"></div>
-  <!-- Scott Landau Team LLC — all lines span same width as LANDAU -->
+  <!-- Scott Landau Team LLC — precise column alignment -->
   <div style="display:flex;flex-direction:column;justify-content:center;gap:3px;">
-    <!-- SCOTT: 5 chars, wider letter-spacing to match LANDAU width -->
-    <span style="font-family:'Jost',sans-serif;font-size:0.64rem;font-weight:300;letter-spacing:0.68em;color:rgba(255,255,255,0.42);text-transform:uppercase;line-height:1.2;display:block;">SCOTT</span>
+    <!-- SCOTT (L→N) + TEAM LLC (D→U) side by side in one row -->
+    <div style="display:flex;flex-direction:row;justify-content:space-between;align-items:baseline;">
+      <span style="font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:300;letter-spacing:0.22em;color:rgba(255,255,255,0.42);text-transform:uppercase;line-height:1.2;">SCOTT</span>
+      <span style="font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.14em;color:rgba(212,175,114,0.72);text-transform:uppercase;line-height:1.2;">TEAM, LLC</span>
+    </div>
     <!-- LANDAU: anchor line -->
     <span style="font-family:'Jost',sans-serif;font-size:1.21rem;font-weight:700;letter-spacing:0.18em;color:rgba(232,201,122,0.92);text-transform:uppercase;line-height:1.1;display:block;">LANDAU</span>
-    <!-- TEAM, LLC: 8 chars, tighter spacing, right-aligned -->
-    <span style="font-family:'Jost',sans-serif;font-size:0.64rem;font-weight:700;letter-spacing:0.24em;color:rgba(212,175,114,0.72);text-transform:uppercase;line-height:1.2;display:block;text-align:right;">TEAM, LLC</span>
   </div>
 </div>
 <ul class="nav-center">
