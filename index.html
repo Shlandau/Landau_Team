@@ -1105,11 +1105,10 @@
       animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 1.0s forwards;
     }
     .intro-exp-img {
-      /* LANDAU is clamp(2.4rem,6vw,5rem) tall — PNG aspect ~1.93:1
-         so height matches LANDAU, width auto */
       height: clamp(2.4rem, 6vw, 5rem);
       width: auto;
       display: block;
+      opacity: 0.72;
     }
     .intro-presents {
       font-family: 'Jost', sans-serif;
@@ -1144,12 +1143,12 @@
       margin: 0 auto;
     }
 
-    /* SCOTT — muted white, small, spaced */
+    /* SCOTT — slightly more present, refined */
     .intro-scott {
       font-family: 'Jost', sans-serif;
       font-size: clamp(0.7rem, 1.4vw, 1rem);
-      font-weight: 300;
-      color: rgba(255,255,255,0.45);
+      font-weight: 400;
+      color: rgba(255,255,255,0.62);
       letter-spacing: 0.38em;
       text-transform: uppercase;
       line-height: 1;
@@ -1162,7 +1161,7 @@
       font-family: 'Jost', sans-serif;
       font-size: clamp(1.6rem, 3.5vw, 3rem);
       font-weight: 700;
-      color: #d4af72;
+      color: #e8c97a;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       line-height: 1;
@@ -1170,16 +1169,18 @@
       animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 2.2s forwards;
     }
 
-    /* TEAM, LLC — gold, lighter weight, smaller */
+    /* TEAM, LLC — gold, bold, right-justified */
     .intro-team {
       font-family: 'Jost', sans-serif;
       font-size: clamp(0.65rem, 1.2vw, 0.9rem);
-      font-weight: 300;
-      color: rgba(212,175,114,0.65);
-      letter-spacing: 0.42em;
+      font-weight: 700;
+      color: rgba(212,175,114,0.82);
+      letter-spacing: 0.32em;
       text-transform: uppercase;
       line-height: 1;
       margin-top: 6px;
+      width: 100%;
+      text-align: right;
       opacity: 0;
       animation: introFadeUp 0.9s ease 2.6s forwards;
     }
