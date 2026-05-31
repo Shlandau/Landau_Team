@@ -1086,19 +1086,20 @@
       gap: 0;
       width: 100%;
     }
-    /* Inner content block — fixed width, centered as a unit */
+    /* Inner content block — centered as a unit on page */
     .intro-logo-inner {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 0;
     }
 
-    /* eXp — official PNG logo, height matches LANDAU */
+    /* eXp — official PNG logo, centered */
     .intro-exp {
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
       gap: 8px;
       opacity: 0;
       animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 1.0s forwards;
@@ -1120,26 +1121,27 @@
       text-transform: lowercase;
     }
 
-    /* Gold horizontal rule — the divider between eXp and name block */
+    /* Gold horizontal rule — centered, expands outward */
     .intro-rule {
       width: 0;
       height: 1px;
       background: linear-gradient(to right, transparent, #d4af72, transparent);
-      margin: 22px 0 20px;
+      margin: 22px auto 20px;
       animation: introRule 1s cubic-bezier(0.77,0,0.175,1) 1.8s forwards;
     }
     @keyframes introRule {
-      to { width: clamp(220px, 35vw, 420px); }
+      to { width: clamp(200px, 30vw, 380px); }
     }
 
-    /* Name block — left-aligned, SCOTT and TEAM LLC flush with LANDAU */
+    /* Name block — text left-aligned, block centered via auto margins */
     .intro-right {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 4px;
-      width: clamp(220px, 35vw, 420px);
+      width: auto;
       text-align: left;
+      margin: 0 auto;
     }
 
     /* SCOTT — muted white, small, spaced */
