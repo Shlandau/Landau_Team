@@ -1147,6 +1147,28 @@
       width: auto;
       text-align: left;
       margin: 0 auto;
+      position: relative;
+    }
+    /* Aura glow behind Scott Landau Team LLC */
+    .intro-right::before {
+      content: "";
+      position: absolute;
+      inset: -28px -40px;
+      background: radial-gradient(
+        ellipse 90% 80% at 50% 55%,
+        rgba(212,175,114,0.09) 0%,
+        rgba(184,150,90,0.05) 40%,
+        transparent 75%
+      );
+      filter: blur(18px);
+      z-index: -1;
+      opacity: 0;
+      animation: auraFadeIn 1.2s ease 3.0s forwards;
+      pointer-events: none;
+    }
+    @keyframes auraFadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
 
     /* SCOTT — slightly more present, refined */
