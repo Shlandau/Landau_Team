@@ -1048,20 +1048,36 @@
       to   { width: 100%; opacity: 1; }
     }
 
-    /* Logo container */
+    /* Logo container — horizontal lockup */
     .intro-logo-wrap {
       position: relative;
       z-index: 2;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       gap: 0;
+    }
+    /* Vertical divider between eXp and right block */
+    .intro-divider {
+      width: 1px;
+      height: 52px;
+      background: rgba(255,255,255,0.22);
+      margin: 0 22px;
+      opacity: 0;
+      animation: introFadeUp 0.8s ease 1.5s forwards;
+    }
+    /* Right side stack */
+    .intro-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
     }
 
     /* eXp — matches bold weight of original logo */
     .intro-exp {
       font-family: 'Jost', sans-serif;
-      font-size: 1.1rem;
+      font-size: 0.78rem;
       font-weight: 700;
       color: white;
       letter-spacing: 0.08em;
@@ -1070,17 +1086,7 @@
       animation: introFadeUp 0.9s cubic-bezier(0.23,1,0.32,1) 1.2s forwards;
     }
 
-    /* Thin gold rule */
-    .intro-rule {
-      width: 0;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(212,175,114,0.6), transparent);
-      margin: 20px 0 16px;
-      animation: introRule 0.9s ease 1.9s forwards;
-    }
-    @keyframes introRule {
-      to { width: min(320px, 55vw); }
-    }
+
 
     /* SCOTT — small, light, spaced caps above LANDAU */
     .intro-scott {
@@ -1091,7 +1097,6 @@
       color: rgba(255,255,255,0.45);
       text-transform: uppercase;
       opacity: 0;
-      margin-bottom: 6px;
       animation: introFadeUp 0.8s ease 2.0s forwards;
     }
 
@@ -1105,7 +1110,6 @@
       line-height: 1;
       text-transform: uppercase;
       opacity: 0;
-      transform: translateY(10px);
       animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 2.1s forwards;
     }
 
@@ -1217,11 +1221,19 @@
   <div class="intro-corner bl"></div>
   <div class="intro-corner br"></div>
 
-  <!-- Logo -->
+  <!-- Logo — horizontal lockup matching GIF -->
   <div class="intro-logo-wrap">
+    <!-- eXp left side -->
     <div class="intro-exp">eXp</div>
-    <div class="intro-rule"></div>
-    <div class="intro-scott">Scott</div>
+    <!-- Vertical divider -->
+    <div class="intro-divider"></div>
+    <!-- Right side: SCOTT / LANDAU / TEAM LLC -->
+    <div class="intro-right">
+      <div class="intro-scott">SCOTT</div>
+      <div class="intro-landau">LANDAU</div>
+      <div class="intro-team">TEAM, LLC</div>
+    </div>
+  </div>
     <div class="intro-landau">LANDAU</div>
     <div class="intro-team">Team &nbsp;·&nbsp; LLC</div>
   </div>
