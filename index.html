@@ -1001,10 +1001,250 @@
       .cta-trust { gap: 24px; flex-wrap: wrap; }
       .search-section { padding: 48px 24px; }
     }
+
+    /* ══════════════════════════════════════
+       INTRO SPLASH SCREEN
+    ══════════════════════════════════════ */
+    #intro {
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      background: #080d16;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: opacity 1.2s cubic-bezier(0.77,0,0.175,1),
+                  transform 1.2s cubic-bezier(0.77,0,0.175,1);
+    }
+    #intro.hide {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(1.04);
+    }
+    #intro-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+    }
+
+    /* Horizontal gold line that sweeps across */
+    .intro-line {
+      position: absolute;
+      top: 50%; left: 0;
+      width: 0; height: 1px;
+      background: linear-gradient(to right,
+        transparent 0%,
+        rgba(184,150,90,0.6) 20%,
+        rgba(212,175,114,1) 50%,
+        rgba(184,150,90,0.6) 80%,
+        transparent 100%);
+      transform: translateY(-50%);
+      animation: lineSweep 1.8s cubic-bezier(0.77,0,0.175,1) 0.3s forwards;
+    }
+    @keyframes lineSweep {
+      from { width: 0; opacity: 0; }
+      to   { width: 100%; opacity: 1; }
+    }
+
+    /* Logo container */
+    .intro-logo-wrap {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* eXp mark */
+    .intro-exp {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: introFadeUp 0.9s cubic-bezier(0.23,1,0.32,1) 1.2s forwards;
+    }
+
+    /* Thin gold rule */
+    .intro-rule {
+      width: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #d4af72, transparent);
+      margin: 18px 0;
+      animation: introRule 0.8s ease 2.0s forwards;
+    }
+    @keyframes introRule {
+      to { width: min(400px, 60vw); }
+    }
+
+    /* SCOTT */
+    .intro-scott {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(0.65rem, 1.5vw, 0.85rem);
+      font-weight: 300;
+      letter-spacing: 0.5em;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      opacity: 0;
+      animation: introFadeUp 0.8s ease 2.1s forwards;
+    }
+
+    /* LANDAU */
+    .intro-landau {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 9vw, 7rem);
+      font-weight: 300;
+      color: white;
+      letter-spacing: 0.12em;
+      line-height: 1;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 2.2s forwards;
+    }
+    .intro-landau em {
+      font-style: italic;
+      color: #d4af72;
+    }
+
+    /* TEAM LLC */
+    .intro-team {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(0.55rem, 1.2vw, 0.72rem);
+      font-weight: 300;
+      letter-spacing: 0.55em;
+      color: rgba(255,255,255,0.28);
+      text-transform: uppercase;
+      margin-top: 14px;
+      opacity: 0;
+      animation: introFadeUp 0.8s ease 2.6s forwards;
+    }
+
+    /* Tagline */
+    .intro-tagline {
+      position: absolute;
+      bottom: 12vh;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(0.65rem, 1.5vw, 0.82rem);
+      font-weight: 300;
+      letter-spacing: 0.28em;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      white-space: nowrap;
+      opacity: 0;
+      animation: introFadeUp 1s ease 3.0s forwards;
+    }
+
+    /* Corner accents */
+    .intro-corner {
+      position: absolute;
+      width: 40px; height: 40px;
+      opacity: 0;
+      animation: introFadeUp 0.8s ease 1.8s forwards;
+    }
+    .intro-corner.tl { top: 40px; left: 40px;
+      border-top: 1px solid rgba(184,150,90,0.5);
+      border-left: 1px solid rgba(184,150,90,0.5); }
+    .intro-corner.tr { top: 40px; right: 40px;
+      border-top: 1px solid rgba(184,150,90,0.5);
+      border-right: 1px solid rgba(184,150,90,0.5); }
+    .intro-corner.bl { bottom: 40px; left: 40px;
+      border-bottom: 1px solid rgba(184,150,90,0.5);
+      border-left: 1px solid rgba(184,150,90,0.5); }
+    .intro-corner.br { bottom: 40px; right: 40px;
+      border-bottom: 1px solid rgba(184,150,90,0.5);
+      border-right: 1px solid rgba(184,150,90,0.5); }
+
+    /* Enter button */
+    .intro-enter {
+      position: absolute;
+      bottom: 6vh;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      opacity: 0;
+      animation: introFadeUp 1s ease 3.4s forwards;
+      border: none;
+      background: transparent;
+    }
+    .intro-enter-text {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      transition: color 0.3s;
+    }
+    .intro-enter:hover .intro-enter-text { color: #d4af72; }
+    .intro-enter-line {
+      width: 1px;
+      height: 0;
+      background: linear-gradient(to bottom, #d4af72, transparent);
+      animation: enterLine 1s ease 4.0s forwards;
+    }
+    @keyframes enterLine {
+      to { height: 40px; }
+    }
+    .intro-enter:hover .intro-enter-line {
+      background: linear-gradient(to bottom, #f0d9a8, transparent);
+    }
+
+    @keyframes introFadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Keep main content hidden until intro exits */
+    body.intro-active { overflow: hidden; }
   </style>
 </head>
 <body>
 <!-- Cursor glow -->
+
+<!-- ══════════════════════════════════════
+     INTRO SPLASH SCREEN
+══════════════════════════════════════ -->
+<div id="intro">
+  <canvas id="intro-canvas"></canvas>
+  <div class="intro-line"></div>
+
+  <!-- Corner accents -->
+  <div class="intro-corner tl"></div>
+  <div class="intro-corner tr"></div>
+  <div class="intro-corner bl"></div>
+  <div class="intro-corner br"></div>
+
+  <!-- Logo -->
+  <div class="intro-logo-wrap">
+    <div class="intro-exp">eXp</div>
+    <div class="intro-rule"></div>
+    <div class="intro-scott">Scott</div>
+    <div class="intro-landau"><em>Landau</em></div>
+    <div class="intro-team">Team &nbsp;·&nbsp; LLC</div>
+  </div>
+
+  <!-- Tagline -->
+  <div class="intro-tagline">Greater Philadelphia &nbsp;·&nbsp; Luxury Real Estate</div>
+
+  <!-- Enter -->
+  <button class="intro-enter" id="introEnter" onclick="dismissIntro()">
+    <span class="intro-enter-text">Enter</span>
+    <div class="intro-enter-line"></div>
+  </button>
+</div>
+
 <div class="cursor-glow" id="cursorGlow"></div>
 <!-- ══════════════════════════════════════
      NAVBAR
@@ -1810,6 +2050,125 @@
 
   draw();
 })();
+</script>
+
+
+<script>
+/* ═══════════════════════════════════════════════════
+   INTRO CANVAS — ambient particle field
+═══════════════════════════════════════════════════ */
+(function() {
+  var c   = document.getElementById('intro-canvas');
+  if (!c) return;
+  var ctx = c.getContext('2d');
+  var W, H, t = 0;
+  var GOLD  = [184,150,90];
+  var GOLD2 = [212,175,114];
+  var GOLD3 = [240,217,168];
+
+  function rgba(col, a) { return 'rgba('+col[0]+','+col[1]+','+col[2]+','+a+')'; }
+
+  function resize() {
+    W = c.width  = c.offsetWidth;
+    H = c.height = c.offsetHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // Particles
+  var pts = Array.from({length: 120}, function() {
+    return {
+      x: Math.random(), y: Math.random(),
+      vx: (Math.random()-0.5)*0.00008,
+      vy: (Math.random()-0.5)*0.00006 - 0.00003,
+      r:  Math.random()*1.2+0.2,
+      a:  Math.random()*0.4+0.05,
+      ph: Math.random()*Math.PI*2,
+      sp: Math.random()*0.0006+0.0003,
+      col:[GOLD,GOLD2,GOLD3][Math.floor(Math.random()*3)]
+    };
+  });
+
+  // Orbs
+  var orbs = [
+    {x:0.5,y:0.5,r:0.55,sp:0.00012,ph:0,  col:GOLD, a:0.09},
+    {x:0.2,y:0.7,r:0.35,sp:0.00016,ph:2.1,col:GOLD2,a:0.06},
+    {x:0.8,y:0.3,r:0.30,sp:0.00014,ph:4.3,col:GOLD3,a:0.05},
+  ];
+
+  var raf;
+  function draw() {
+    t++;
+    // Deep background
+    ctx.fillStyle = '#080d16';
+    ctx.fillRect(0,0,W,H);
+
+    // Orbs
+    orbs.forEach(function(o) {
+      var drift = Math.sin(t*o.sp*1000+o.ph);
+      var cx = (o.x+drift*0.08)*W;
+      var cy = (o.y+Math.cos(t*o.sp*800+o.ph)*0.06)*H;
+      var r  = o.r*Math.min(W,H);
+      var g  = ctx.createRadialGradient(cx,cy,0,cx,cy,r);
+      g.addColorStop(0,   rgba(o.col,o.a));
+      g.addColorStop(0.5, rgba(o.col,o.a*0.3));
+      g.addColorStop(1,   rgba(o.col,0));
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.ellipse(cx,cy,r,r*0.6,drift*0.4,0,Math.PI*2);
+      ctx.fill();
+    });
+
+    // Particles
+    pts.forEach(function(p) {
+      p.x += p.vx; p.y += p.vy;
+      if(p.x<0)p.x=1; if(p.x>1)p.x=0;
+      if(p.y<0)p.y=1; if(p.y>1)p.y=0;
+      var pulse = 0.5+0.5*Math.sin(t*p.sp*1000+p.ph);
+      var a = p.a*pulse;
+      var px=p.x*W, py=p.y*H;
+      var glow=ctx.createRadialGradient(px,py,0,px,py,p.r*7);
+      glow.addColorStop(0,rgba(p.col,a*0.5));
+      glow.addColorStop(1,rgba(p.col,0));
+      ctx.fillStyle=glow;
+      ctx.beginPath(); ctx.arc(px,py,p.r*7,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle=rgba(p.col,a);
+      ctx.beginPath(); ctx.arc(px,py,p.r,0,Math.PI*2); ctx.fill();
+    });
+
+    raf = requestAnimationFrame(draw);
+  }
+  draw();
+
+  // Stop canvas when intro dismissed
+  window._stopIntroCanvas = function() { cancelAnimationFrame(raf); };
+})();
+
+/* ═══════════════════════════════════════════════════
+   INTRO DISMISS
+═══════════════════════════════════════════════════ */
+document.body.classList.add('intro-active');
+
+// Auto-dismiss after 6s if user doesn't click
+var autoDismiss = setTimeout(function() { dismissIntro(); }, 6000);
+
+function dismissIntro() {
+  clearTimeout(autoDismiss);
+  var intro = document.getElementById('intro');
+  intro.classList.add('hide');
+  document.body.classList.remove('intro-active');
+  if (window._stopIntroCanvas) {
+    setTimeout(window._stopIntroCanvas, 1400);
+  }
+  setTimeout(function() {
+    intro.style.display = 'none';
+  }, 1400);
+}
+
+// Also dismiss on any key press
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') dismissIntro();
+}, {once: true});
 </script>
 
 </body>
