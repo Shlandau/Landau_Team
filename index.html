@@ -1086,29 +1086,16 @@
       gap: 0;
     }
 
-    /* eXp presents — subtitle style */
-    .intro-presents {
-      font-size: 0.38em;
-      font-weight: 300;
-      letter-spacing: 0.35em;
-      color: rgba(255,255,255,0.45);
-      font-style: italic;
-      vertical-align: middle;
-      margin-left: 0.2em;
-      text-transform: lowercase;
-    }
-
-    /* eXp — large, white, sits above the gold line */
+    /* eXp — SVG logo mark container */
     .intro-exp {
-      font-family: 'Jost', sans-serif;
-      font-size: clamp(3.5rem, 8vw, 6.5rem);
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: 0.06em;
-      line-height: 1;
-      text-transform: none;
       opacity: 0;
       animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 1.0s forwards;
+    }
+    .intro-exp-svg {
+      width: clamp(160px, 28vw, 320px);
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 0 20px rgba(255,255,255,0.08));
     }
 
     /* Gold horizontal rule — the divider between eXp and name block */
@@ -1270,7 +1257,29 @@
 
   <!-- Logo — eXp above gold line, name block below left-aligned -->
   <div class="intro-logo-wrap">
-    <div class="intro-exp">eXp <span class="intro-presents">presents</span></div>
+    <!-- eXp SVG logo mark — faithful recreation with disconnected X ascending arm -->
+    <div class="intro-exp">
+      <svg class="intro-exp-svg" viewBox="0 0 220 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- e — bold, rounded -->
+        <text x="0" y="58" font-family="Jost,sans-serif" font-size="64" font-weight="800" fill="white" letter-spacing="-2">e</text>
+        <!-- X mark — custom SVG paths to replicate the eXp X with disconnected ascending arm -->
+        <g transform="translate(68, 4)">
+          <!-- Left diagonal: bottom-left to center (full stroke) -->
+          <line x1="2" y1="62" x2="32" y2="28" stroke="white" stroke-width="9" stroke-linecap="round"/>
+          <!-- Right diagonal lower: center to bottom-right -->
+          <line x1="32" y1="28" x2="58" y2="62" stroke="white" stroke-width="9" stroke-linecap="round"/>
+          <!-- Left upper arm: center to top-left -->
+          <line x1="32" y1="28" x2="8" y2="4" stroke="white" stroke-width="9" stroke-linecap="round"/>
+          <!-- Right upper arm DISCONNECTED — floats above with gap, ascending -->
+          <!-- Gap starts at ~top-right of X, floats higher = exponential growth -->
+          <line x1="44" y1="18" x2="64" y2="0" stroke="white" stroke-width="9" stroke-linecap="round"/>
+        </g>
+        <!-- p — bold -->
+        <text x="140" y="58" font-family="Jost,sans-serif" font-size="64" font-weight="800" fill="white" letter-spacing="-2">p</text>
+        <!-- presents — small italic below -->
+        <text x="2" y="72" font-family="Jost,sans-serif" font-size="10" font-weight="300" fill="rgba(255,255,255,0.4)" letter-spacing="6" font-style="italic">presents</text>
+      </svg>
+    </div>
     <div class="intro-rule"></div>
     <div class="intro-right">
       <div class="intro-scott">SCOTT</div>
@@ -1313,8 +1322,13 @@
 <!-- eXp -->
 <g class="logo-exp">
 <text x="0" y="36" font-family="Jost,sans-serif" font-size="31" font-weight="700" fill="white">e</text>
-<text x="19" y="36" font-family="Jost,sans-serif" font-size="31" font-weight="700" fill="white">X</text>
-<line class="logo-xline" x1="27" y1="9" x2="37" y2="3" stroke="#d4af72" stroke-width="2.5" stroke-linecap="round"/>
+<!-- X with disconnected ascending arm per eXp brand -->
+<g transform="translate(18,4)">
+<line class="la" x1="1" y1="32" x2="15" y2="14" stroke="white" stroke-width="5" stroke-linecap="round"/>
+<line class="la" x1="15" y1="14" x2="28" y2="32" stroke="white" stroke-width="5" stroke-linecap="round"/>
+<line class="la" x1="15" y1="14" x2="3" y2="2" stroke="white" stroke-width="5" stroke-linecap="round"/>
+<line class="logo-xline" x1="20" y1="8" x2="30" y2="-1" stroke="white" stroke-width="5" stroke-linecap="round"/>
+</g>
 <text x="43" y="36" font-family="Jost,sans-serif" font-size="31" font-weight="700" fill="white">p</text>
 </g>
 <!-- divider -->
