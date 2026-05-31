@@ -669,7 +669,7 @@
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+      gap: 1px;
     }
     .tcard {
       background: var(--white);
@@ -1060,7 +1060,7 @@
     /* Vertical divider between eXp and right block */
     .intro-divider {
       width: 1px;
-      height: 52px;
+      height: 44px;
       background: rgba(255,255,255,0.22);
       margin: 0 22px;
       opacity: 0;
@@ -1074,57 +1074,24 @@
       gap: 2px;
     }
 
-    /* eXp — matches bold weight of original logo */
-    .intro-exp {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: white;
-      letter-spacing: 0.08em;
-      line-height: 1;
-      opacity: 0;
-      animation: introFadeUp 0.9s cubic-bezier(0.23,1,0.32,1) 1.2s forwards;
-    }
-
-
-
-    /* SCOTT — small, light, spaced caps above LANDAU */
-    .intro-scott {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 300;
-      letter-spacing: 0.45em;
-      color: rgba(255,255,255,0.45);
-      text-transform: uppercase;
-      opacity: 0;
-      animation: introFadeUp 0.8s ease 2.0s forwards;
-    }
-
-    /* LANDAU — large, bold, uppercase — matches original logo weight */
-    .intro-landau {
-      font-family: 'Jost', sans-serif;
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      font-weight: 700;
-      color: white;
-      letter-spacing: 0.22em;
-      line-height: 1;
-      text-transform: uppercase;
-      opacity: 0;
-      animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 2.1s forwards;
-    }
-
-    /* TEAM, LLC — small spaced caps below */
+    /* ── ALL intro logo text — ONE unified style ── */
+    .intro-exp,
+    .intro-scott,
+    .intro-landau,
     .intro-team {
       font-family: 'Jost', sans-serif;
-      font-size: 0.58rem;
-      font-weight: 300;
-      letter-spacing: 0.5em;
-      color: rgba(255,255,255,0.3);
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: white;
+      letter-spacing: 0.18em;
+      line-height: 1.5;
       text-transform: uppercase;
-      margin-top: 10px;
       opacity: 0;
-      animation: introFadeUp 0.8s ease 2.5s forwards;
     }
+    .intro-exp   { animation: introFadeUp 0.8s ease 1.2s forwards; }
+    .intro-scott { animation: introFadeUp 0.8s ease 2.0s forwards; }
+    .intro-landau{ animation: introFadeUp 0.8s ease 2.1s forwards; }
+    .intro-team  { animation: introFadeUp 0.8s ease 2.5s forwards; }
 
     /* Tagline */
     .intro-tagline {
@@ -1234,8 +1201,6 @@
       <div class="intro-team">TEAM, LLC</div>
     </div>
   </div>
-    <div class="intro-landau">LANDAU</div>
-    <div class="intro-team">Team &nbsp;·&nbsp; LLC</div>
   </div>
 
   <!-- Tagline -->
