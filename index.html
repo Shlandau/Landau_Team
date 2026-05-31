@@ -1076,13 +1076,21 @@
 
     /* ── INTRO LOGO — Star of the splash ── */
 
-    /* Outer wrapper: vertical stack, centered */
+    /* Outer wrapper: vertical stack, centered on page */
     .intro-logo-wrap {
       position: relative;
       z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 0;
+      width: 100%;
+    }
+    /* Inner content block — fixed width, centered as a unit */
+    .intro-logo-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       gap: 0;
     }
 
@@ -1269,18 +1277,20 @@
   <div class="intro-corner bl"></div>
   <div class="intro-corner br"></div>
 
-  <!-- Logo — eXp above gold line, name block below left-aligned -->
+  <!-- Logo — entire block centered on page, text left-aligned within -->
   <div class="intro-logo-wrap">
-    <!-- eXp official PNG logo — sized to match LANDAU -->
-    <div class="intro-exp">
-      <img src="exp-logo-white.png" alt="eXp Realty" class="intro-exp-img"/>
-      <div class="intro-presents">presents</div>
-    </div>
-    <div class="intro-rule"></div>
-    <div class="intro-right">
-      <div class="intro-scott">SCOTT</div>
-      <div class="intro-landau">LANDAU</div>
-      <div class="intro-team">TEAM, LLC</div>
+    <div class="intro-logo-inner">
+      <!-- eXp official PNG logo — sized to match LANDAU -->
+      <div class="intro-exp">
+        <img src="exp-logo-white.png" alt="eXp Realty" class="intro-exp-img"/>
+        <div class="intro-presents">presents</div>
+      </div>
+      <div class="intro-rule"></div>
+      <div class="intro-right">
+        <div class="intro-scott">SCOTT</div>
+        <div class="intro-landau">LANDAU</div>
+        <div class="intro-team">TEAM, LLC</div>
+      </div>
     </div>
   </div>
   </div>
