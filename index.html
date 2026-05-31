@@ -1203,21 +1203,21 @@
       animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 3.0s forwards;
     }
 
-    /* TEAM, LLC — N→U span using scaleX to fit precisely */
+    /* TEAM, LLC — N→U span, tight spacing, no word gap */
     .intro-team {
       font-family: 'Jost', sans-serif;
       font-size: clamp(0.55rem, 1.1vw, 0.72rem);
       font-weight: 700;
       color: rgba(212,175,114,0.82);
-      letter-spacing: 0.18em;
+      letter-spacing: 0.42em;
+      word-spacing: 0.1em;
       text-transform: uppercase;
       line-height: 1;
       margin-top: 4px;
       display: block;
       width: 67%;
       align-self: flex-end;
-      text-align: justify;
-      text-align-last: justify;
+      text-align: left;
       white-space: nowrap;
       opacity: 0;
       animation: introFadeUp 0.9s ease 3.4s forwards;
@@ -1330,7 +1330,7 @@
       <div class="intro-right">
         <div class="intro-scott">SCOTT</div>
         <div class="intro-landau">LANDAU</div>
-        <div class="intro-team">TEAM, LLC</div>
+        <div class="intro-team">TEAM,&thinsp;LLC</div>
       </div>
     </div>
   </div>
