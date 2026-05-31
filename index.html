@@ -1319,42 +1319,17 @@
      NAVBAR
 ══════════════════════════════════════ -->
 <nav id="navbar">
-<div class="nav-logo" style="display:flex;align-items:center;">
-<svg class="site-logo-svg" viewBox="0 0 310 54" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:42px;width:auto;overflow:visible;">
-<defs>
-<style>
-.logo-exp{animation:logoFadeIn 1.2s ease forwards;opacity:0;}
-.logo-div{animation:logoFadeIn 1.4s ease forwards;opacity:0;}
-.logo-scott{animation:logoFadeIn 1.6s ease forwards;opacity:0;}
-.logo-landau{animation:logoFadeIn 1.8s ease forwards;opacity:0;}
-.logo-team{animation:logoFadeIn 2.0s ease forwards;opacity:0;}
-.logo-xline{animation:xPulse 3s ease-in-out 2.2s infinite;}
-@keyframes logoFadeIn{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:translateY(0);}}
-@keyframes xPulse{0%,100%{stroke:#d4af72;}50%{stroke:#f0d9a8;}}
-</style>
-<linearGradient id="gG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#b8965a"/><stop offset="100%" stop-color="#f0d9a8"/></linearGradient>
-</defs>
-<!-- eXp -->
-<g class="logo-exp">
-<text x="0" y="36" font-family="Jost,sans-serif" font-size="31" font-weight="700" fill="white">e</text>
-<!-- X with disconnected ascending arm per eXp brand -->
-<g transform="translate(18,4)">
-<line class="la" x1="1" y1="32" x2="15" y2="14" stroke="white" stroke-width="5" stroke-linecap="round"/>
-<line class="la" x1="15" y1="14" x2="28" y2="32" stroke="white" stroke-width="5" stroke-linecap="round"/>
-<line class="la" x1="15" y1="14" x2="3" y2="2" stroke="white" stroke-width="5" stroke-linecap="round"/>
-<line class="logo-xline" x1="20" y1="8" x2="30" y2="-1" stroke="white" stroke-width="5" stroke-linecap="round"/>
-</g>
-<text x="43" y="36" font-family="Jost,sans-serif" font-size="31" font-weight="700" fill="white">p</text>
-</g>
-<!-- divider -->
-<line class="logo-div" x1="78" y1="7" x2="78" y2="47" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
-<!-- SCOTT -->
-<text class="logo-scott" x="90" y="22" font-family="Jost,sans-serif" font-size="8.5" font-weight="400" letter-spacing="4.5" fill="rgba(255,255,255,0.5)">SCOTT</text>
-<!-- LANDAU -->
-<text class="logo-landau" x="88" y="40" font-family="Cormorant Garamond,serif" font-size="21" font-weight="600" letter-spacing="3.5" fill="white">LANDAU</text>
-<!-- TEAM LLC -->
-<text class="logo-team" x="90" y="52" font-family="Jost,sans-serif" font-size="7" font-weight="300" letter-spacing="5" fill="rgba(255,255,255,0.3)">TEAM, LLC</text>
-</svg>
+<div class="nav-logo" style="display:flex;align-items:center;gap:0;">
+  <!-- eXp official PNG — muted in nav -->
+  <img src="exp-logo-white.png" alt="eXp Realty" style="height:22px;width:auto;opacity:0.55;display:block;"/>
+  <!-- Vertical divider -->
+  <div style="width:1px;height:26px;background:rgba(255,255,255,0.18);margin:0 14px;flex-shrink:0;"></div>
+  <!-- Scott Landau Team LLC — intro style -->
+  <div style="display:flex;flex-direction:column;align-items:flex-start;gap:1px;">
+    <span style="font-family:'Jost',sans-serif;font-size:0.55rem;font-weight:400;letter-spacing:0.38em;color:rgba(255,255,255,0.5);text-transform:uppercase;line-height:1;">SCOTT</span>
+    <span style="font-family:'Jost',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.18em;color:rgba(232,201,122,0.92);text-transform:uppercase;line-height:1;">LANDAU</span>
+    <span style="font-family:'Jost',sans-serif;font-size:0.45rem;font-weight:700;letter-spacing:0.32em;color:rgba(212,175,114,0.65);text-transform:uppercase;line-height:1;align-self:flex-end;">TEAM, LLC</span>
+  </div>
 </div>
 <ul class="nav-center">
 <li><a href="#search">Search</a></li>
@@ -1950,7 +1925,7 @@
 /* ═══════════════════════════════════════════════════════
    LUXURY ABSTRACT CANVAS — Scott Landau Team
    Layers: deep ink base · gold orb nebulae · geometric
-   line grid · drifting particles · shimmer waves
+   line grid · muted sparkle particles · shimmer waves
 ═══════════════════════════════════════════════════════ */
 (function() {
   const canvas = document.getElementById('heroCanvas');
@@ -1958,7 +1933,7 @@
   const ctx = canvas.getContext('2d');
   let W, H, t = 0;
 
-  const INK   = [10, 15, 26];
+  const INK   = [17, 24, 40];
   const NAVY  = [54, 74, 116];
   const GOLD  = [184, 150, 90];
   const GOLD2 = [212, 175, 114];
@@ -1973,44 +1948,48 @@
   window.addEventListener('resize', resize);
   resize();
 
+  // Subtle orbs — very low opacity
   const orbs = [
-    { x:0.72, y:0.38, r:0.52, speed:0.00018, phase:0,   col:GOLD,  a:0.13 },
-    { x:0.18, y:0.65, r:0.38, speed:0.00013, phase:2.1, col:GOLD2, a:0.08 },
-    { x:0.85, y:0.80, r:0.30, speed:0.00022, phase:4.3, col:GOLD3, a:0.06 },
-    { x:0.40, y:0.20, r:0.25, speed:0.00016, phase:1.5, col:GOLD,  a:0.07 },
-    { x:0.60, y:0.90, r:0.20, speed:0.00020, phase:3.7, col:GOLD2, a:0.05 },
+    { x:0.72, y:0.38, r:0.52, speed:0.00018, phase:0,   col:GOLD,  a:0.07 },
+    { x:0.18, y:0.65, r:0.38, speed:0.00013, phase:2.1, col:GOLD2, a:0.04 },
+    { x:0.85, y:0.80, r:0.30, speed:0.00022, phase:4.3, col:GOLD3, a:0.03 },
+    { x:0.40, y:0.20, r:0.25, speed:0.00016, phase:1.5, col:GOLD,  a:0.04 },
   ];
 
-  const GRID_COLS = 12, GRID_ROWS = 8;
-
-  const particles = Array.from({ length: 90 }, function() {
+  // Muted sparkle particles — few, dim, slow
+  const sparks = Array.from({ length: 38 }, function() {
     return {
       x:     Math.random(),
       y:     Math.random(),
-      vx:    (Math.random() - 0.5) * 0.00012,
-      vy:    (Math.random() - 0.5) * 0.00008 - 0.00004,
-      size:  Math.random() * 1.4 + 0.3,
-      alpha: Math.random() * 0.5 + 0.1,
-      phase: Math.random() * Math.PI * 2,
-      speed: Math.random() * 0.0008 + 0.0004,
+      vx:    (Math.random() - 0.5) * 0.00006,
+      vy:    (Math.random() - 0.5) * 0.00004 - 0.00002,
+      r:     Math.random() * 0.8 + 0.2,
+      a:     Math.random() * 0.12 + 0.03,
+      ph:    Math.random() * Math.PI * 2,
+      sp:    Math.random() * 0.0004 + 0.0002,
       col:   [GOLD, GOLD2, GOLD3][Math.floor(Math.random() * 3)],
     };
   });
 
-  const waves = Array.from({ length: 5 }, function(_, i) {
+  // Geometric grid
+  const GRID_COLS = 12, GRID_ROWS = 8;
+
+  // Shimmer waves
+  const waves = Array.from({ length: 4 }, function(_, i) {
     return {
-      yBase: 0.3 + i * 0.12,
-      amp:   0.025 + i * 0.008,
-      freq:  0.6 + i * 0.3,
-      speed: 0.00025 + i * 0.00008,
-      phase: (i / 5) * Math.PI * 2,
-      alpha: 0.04 + i * 0.01,
+      yBase: 0.3 + i * 0.14,
+      amp:   0.018 + i * 0.006,
+      freq:  0.5 + i * 0.25,
+      speed: 0.00020 + i * 0.00006,
+      phase: (i / 4) * Math.PI * 2,
+      alpha: 0.025 + i * 0.008,
     };
   });
 
   function draw() {
     t++;
 
+    // Base gradient
     var bg = ctx.createLinearGradient(0, 0, W, H);
     bg.addColorStop(0,   'rgb(' + INK[0]  + ',' + INK[1]  + ',' + INK[2]  + ')');
     bg.addColorStop(0.5, 'rgb(' + NAVY[0] + ',' + NAVY[1] + ',' + NAVY[2] + ')');
@@ -2026,7 +2005,7 @@
       var r  = o.r * Math.min(W, H);
       var g  = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
       g.addColorStop(0,   rgba(o.col, o.a));
-      g.addColorStop(0.4, rgba(o.col, o.a * 0.4));
+      g.addColorStop(0.4, rgba(o.col, o.a * 0.3));
       g.addColorStop(1,   rgba(o.col, 0));
       ctx.fillStyle = g;
       ctx.beginPath();
@@ -2034,37 +2013,37 @@
       ctx.fill();
     });
 
-    // Geometric grid
-    ctx.lineWidth = 0.5;
+    // Geometric grid — very subtle
+    ctx.lineWidth = 0.4;
     for (var c = 0; c <= GRID_COLS; c++) {
       var xBase = (c / GRID_COLS) * W;
-      ctx.strokeStyle = rgba(GOLD, 0.055);
+      ctx.strokeStyle = rgba(GOLD, 0.035);
       ctx.beginPath();
-      for (var py = 0; py <= H; py += 4) {
-        var wave = Math.sin(py * 0.008 + t * 0.003 + c * 0.5) * 6;
-        if (py === 0) ctx.moveTo(xBase + wave, py);
-        else          ctx.lineTo(xBase + wave, py);
+      for (var py = 0; py <= H; py += 6) {
+        var wv = Math.sin(py * 0.008 + t * 0.002 + c * 0.5) * 5;
+        if (py === 0) ctx.moveTo(xBase + wv, py);
+        else          ctx.lineTo(xBase + wv, py);
       }
       ctx.stroke();
     }
     for (var r = 0; r <= GRID_ROWS; r++) {
       var yBase = (r / GRID_ROWS) * H;
-      ctx.strokeStyle = rgba(GOLD, 0.055);
+      ctx.strokeStyle = rgba(GOLD, 0.035);
       ctx.beginPath();
-      for (var px = 0; px <= W; px += 4) {
-        var wv = Math.sin(px * 0.006 + t * 0.002 + r * 0.7) * 5;
-        if (px === 0) ctx.moveTo(px, yBase + wv);
-        else          ctx.lineTo(px, yBase + wv);
+      for (var px = 0; px <= W; px += 6) {
+        var wv2 = Math.sin(px * 0.006 + t * 0.002 + r * 0.7) * 4;
+        if (px === 0) ctx.moveTo(px, yBase + wv2);
+        else          ctx.lineTo(px, yBase + wv2);
       }
       ctx.stroke();
     }
 
     // Diagonal accent lines
-    ctx.lineWidth = 0.8;
+    ctx.lineWidth = 0.6;
     for (var d = -2; d <= 14; d++) {
-      var x0 = (d / 12) * W * 1.5 - W * 0.25;
-      var dft = Math.sin(t * 0.0015 + d * 0.4) * 20;
-      ctx.strokeStyle = rgba(GOLD2, 0.04 + Math.sin(t * 0.002 + d) * 0.02);
+      var x0  = (d / 12) * W * 1.5 - W * 0.25;
+      var dft = Math.sin(t * 0.0015 + d * 0.4) * 18;
+      ctx.strokeStyle = rgba(GOLD2, 0.025 + Math.sin(t * 0.002 + d) * 0.01);
       ctx.beginPath();
       ctx.moveTo(x0 + dft, 0);
       ctx.lineTo(x0 + H * 0.55 + dft, H);
@@ -2075,9 +2054,9 @@
     waves.forEach(function(w) {
       var pulse = 0.5 + 0.5 * Math.sin(t * 0.001 + w.phase);
       ctx.strokeStyle = rgba(GOLD3, w.alpha * pulse);
-      ctx.lineWidth = 1.2;
+      ctx.lineWidth = 0.9;
       ctx.beginPath();
-      for (var px = 0; px <= W; px += 3) {
+      for (var px = 0; px <= W; px += 4) {
         var yy = (w.yBase + Math.sin(px * w.freq * 0.005 + t * w.speed * 1000 + w.phase) * w.amp) * H;
         if (px === 0) ctx.moveTo(px, yy);
         else          ctx.lineTo(px, yy);
@@ -2085,38 +2064,40 @@
       ctx.stroke();
     });
 
-    // Particles
-    particles.forEach(function(p) {
+    // Muted sparkle particles
+    sparks.forEach(function(p) {
       p.x += p.vx; p.y += p.vy;
       if (p.x < 0) p.x = 1; if (p.x > 1) p.x = 0;
       if (p.y < 0) p.y = 1; if (p.y > 1) p.y = 0;
-      var pulse = 0.5 + 0.5 * Math.sin(t * p.speed * 1000 + p.phase);
-      var a  = p.alpha * pulse;
+      var pulse = 0.5 + 0.5 * Math.sin(t * p.sp * 1000 + p.ph);
+      var a  = p.a * pulse;
       var px = p.x * W, py = p.y * H;
-      var glow = ctx.createRadialGradient(px, py, 0, px, py, p.size * 6);
-      glow.addColorStop(0, rgba(p.col, a * 0.6));
+      // Soft glow
+      var glow = ctx.createRadialGradient(px, py, 0, px, py, p.r * 5);
+      glow.addColorStop(0, rgba(p.col, a * 0.4));
       glow.addColorStop(1, rgba(p.col, 0));
       ctx.fillStyle = glow;
-      ctx.beginPath(); ctx.arc(px, py, p.size * 6, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = rgba(p.col, a);
-      ctx.beginPath(); ctx.arc(px, py, p.size, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.arc(px, py, p.r * 5, 0, Math.PI * 2); ctx.fill();
+      // Core dot
+      ctx.fillStyle = rgba(p.col, a * 0.8);
+      ctx.beginPath(); ctx.arc(px, py, p.r, 0, Math.PI * 2); ctx.fill();
     });
 
     // Corner accents
-    var ca = 0.18 + 0.06 * Math.sin(t * 0.002);
-    ctx.strokeStyle = rgba(GOLD, ca); ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(60, 100); ctx.lineTo(60, 160); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(60, 100); ctx.lineTo(120, 100); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(W-60, H-100); ctx.lineTo(W-60, H-160); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(W-60, H-100); ctx.lineTo(W-120, H-100); ctx.stroke();
+    var ca = 0.12 + 0.04 * Math.sin(t * 0.002);
+    ctx.strokeStyle = rgba(GOLD, ca); ctx.lineWidth = 0.8;
+    ctx.beginPath(); ctx.moveTo(60, 100); ctx.lineTo(60, 140); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(60, 100); ctx.lineTo(100, 100); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(W-60, H-100); ctx.lineTo(W-60, H-140); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(W-60, H-100); ctx.lineTo(W-100, H-100); ctx.stroke();
 
-    // Central ring pulse
-    var ringR  = (0.18 + 0.02 * Math.sin(t * 0.0015)) * Math.min(W, H);
-    var ringA  = 0.06 + 0.03 * Math.sin(t * 0.002);
+    // Subtle ring pulse
+    var ringR  = (0.16 + 0.015 * Math.sin(t * 0.0015)) * Math.min(W, H);
+    var ringA  = 0.04 + 0.02 * Math.sin(t * 0.002);
     var ringCX = W * 0.72, ringCY = H * 0.42;
-    ctx.strokeStyle = rgba(GOLD2, ringA); ctx.lineWidth = 0.8;
+    ctx.strokeStyle = rgba(GOLD2, ringA); ctx.lineWidth = 0.6;
     ctx.beginPath(); ctx.arc(ringCX, ringCY, ringR, 0, Math.PI * 2); ctx.stroke();
-    ctx.strokeStyle = rgba(GOLD2, ringA * 0.5);
+    ctx.strokeStyle = rgba(GOLD2, ringA * 0.4);
     ctx.beginPath(); ctx.arc(ringCX, ringCY, ringR * 1.35, 0, Math.PI * 2); ctx.stroke();
 
     requestAnimationFrame(draw);
