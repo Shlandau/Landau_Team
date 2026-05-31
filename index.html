@@ -1074,24 +1074,92 @@
       gap: 2px;
     }
 
-    /* ── ALL intro logo text — ONE unified style ── */
-    .intro-exp,
-    .intro-scott,
-    .intro-landau,
-    .intro-team {
+    /* ── INTRO LOGO — Star of the splash ── */
+
+    /* Outer wrapper: vertical stack, centered */
+    .intro-logo-wrap {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* eXp — large, white, sits above the gold line */
+    .intro-exp {
       font-family: 'Jost', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 400;
-      color: white;
-      letter-spacing: 0.18em;
-      line-height: 1.5;
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.06em;
+      line-height: 1;
       text-transform: uppercase;
       opacity: 0;
+      animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 1.0s forwards;
     }
-    .intro-exp   { animation: introFadeUp 0.8s ease 1.2s forwards; }
-    .intro-scott { animation: introFadeUp 0.8s ease 2.0s forwards; }
-    .intro-landau{ animation: introFadeUp 0.8s ease 2.1s forwards; }
-    .intro-team  { animation: introFadeUp 0.8s ease 2.5s forwards; }
+
+    /* Gold horizontal rule — the divider between eXp and name block */
+    .intro-rule {
+      width: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #d4af72, transparent);
+      margin: 22px 0 20px;
+      animation: introRule 1s cubic-bezier(0.77,0,0.175,1) 1.8s forwards;
+    }
+    @keyframes introRule {
+      to { width: clamp(260px, 40vw, 480px); }
+    }
+
+    /* Right-side name block — left-aligned */
+    .intro-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      width: clamp(260px, 40vw, 480px);
+    }
+
+    /* SCOTT — muted white, small, spaced */
+    .intro-scott {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(0.7rem, 1.4vw, 1rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      line-height: 1;
+      opacity: 0;
+      animation: introFadeUp 0.9s ease 2.1s forwards;
+    }
+
+    /* LANDAU — gold, large, dominant */
+    .intro-landau {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      font-weight: 700;
+      color: #d4af72;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      line-height: 1;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 2.2s forwards;
+    }
+
+    /* TEAM, LLC — gold, lighter weight, smaller */
+    .intro-team {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(0.65rem, 1.2vw, 0.9rem);
+      font-weight: 300;
+      color: rgba(212,175,114,0.65);
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-top: 6px;
+      opacity: 0;
+      animation: introFadeUp 0.9s ease 2.6s forwards;
+    }
 
     /* Tagline */
     .intro-tagline {
@@ -1188,13 +1256,10 @@
   <div class="intro-corner bl"></div>
   <div class="intro-corner br"></div>
 
-  <!-- Logo — horizontal lockup matching GIF -->
+  <!-- Logo — eXp above gold line, name block below left-aligned -->
   <div class="intro-logo-wrap">
-    <!-- eXp left side -->
     <div class="intro-exp">eXp</div>
-    <!-- Vertical divider -->
-    <div class="intro-divider"></div>
-    <!-- Right side: SCOTT / LANDAU / TEAM LLC -->
+    <div class="intro-rule"></div>
     <div class="intro-right">
       <div class="intro-scott">SCOTT</div>
       <div class="intro-landau">LANDAU</div>
