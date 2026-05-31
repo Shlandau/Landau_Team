@@ -1203,13 +1203,13 @@
       animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 3.0s forwards;
     }
 
-    /* TEAM, LLC — spans N→U of LANDAU, starts at N (33% from left) */
+    /* TEAM, LLC — spans N→U of LANDAU, does not exceed U */
     .intro-team {
       font-family: 'Jost', sans-serif;
-      font-size: clamp(0.65rem, 1.4vw, 0.85rem);
+      font-size: clamp(0.55rem, 1.1vw, 0.75rem);
       font-weight: 700;
       color: rgba(212,175,114,0.82);
-      letter-spacing: 0.69em;
+      letter-spacing: 0.77em;
       text-transform: uppercase;
       line-height: 1;
       margin-top: 4px;
@@ -1217,6 +1217,7 @@
       align-self: flex-end;
       text-align: left;
       white-space: nowrap;
+      overflow: hidden;
       opacity: 0;
       animation: introFadeUp 0.9s ease 3.4s forwards;
     }
