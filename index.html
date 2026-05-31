@@ -1149,26 +1149,49 @@
       margin: 0 auto;
       position: relative;
     }
-    /* Aura glow behind Scott Landau Team LLC */
+    /* Aura glow behind Scott Landau Team LLC — more pronounced, pulsating */
     .intro-right::before {
       content: "";
       position: absolute;
-      inset: -28px -40px;
+      inset: -40px -56px;
       background: radial-gradient(
-        ellipse 90% 80% at 50% 55%,
-        rgba(212,175,114,0.09) 0%,
-        rgba(184,150,90,0.05) 40%,
-        transparent 75%
+        ellipse 95% 85% at 50% 55%,
+        rgba(232,201,122,0.22) 0%,
+        rgba(212,175,114,0.12) 35%,
+        rgba(184,150,90,0.05) 60%,
+        transparent 80%
       );
-      filter: blur(18px);
+      filter: blur(22px);
       z-index: -1;
       opacity: 0;
-      animation: auraFadeIn 1.2s ease 3.0s forwards;
+      animation: auraFadeIn 1.4s ease 3.0s forwards, auraPulse 3.8s ease-in-out 4.4s infinite;
+      pointer-events: none;
+    }
+    /* Pulsating edge — separate ring layer */
+    .intro-right::after {
+      content: "";
+      position: absolute;
+      inset: -50px -64px;
+      border-radius: 50%;
+      background: transparent;
+      box-shadow: 0 0 40px 8px rgba(212,175,114,0.08),
+                  0 0 80px 20px rgba(184,150,90,0.04);
+      z-index: -1;
+      opacity: 0;
+      animation: auraFadeIn 1.4s ease 3.2s forwards, edgePulse 3.8s ease-in-out 4.4s infinite;
       pointer-events: none;
     }
     @keyframes auraFadeIn {
       from { opacity: 0; }
       to   { opacity: 1; }
+    }
+    @keyframes auraPulse {
+      0%, 100% { opacity: 1;    filter: blur(22px); }
+      50%       { opacity: 0.6; filter: blur(28px); }
+    }
+    @keyframes edgePulse {
+      0%, 100% { opacity: 1;   box-shadow: 0 0 40px 8px rgba(212,175,114,0.08), 0 0 80px 20px rgba(184,150,90,0.04); }
+      50%       { opacity: 0.5; box-shadow: 0 0 60px 16px rgba(212,175,114,0.13), 0 0 110px 32px rgba(184,150,90,0.06); }
     }
 
     /* SCOTT — slightly more present, refined */
