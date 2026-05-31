@@ -1090,7 +1090,7 @@
     .intro-exp {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 8px;
       opacity: 0;
       animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 1.0s forwards;
@@ -1121,16 +1121,17 @@
       animation: introRule 1s cubic-bezier(0.77,0,0.175,1) 1.8s forwards;
     }
     @keyframes introRule {
-      to { width: clamp(260px, 40vw, 480px); }
+      to { width: clamp(220px, 35vw, 420px); }
     }
 
-    /* Right-side name block — left-aligned */
+    /* Name block — centered under eXp logo */
     .intro-right {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 4px;
       width: clamp(260px, 40vw, 480px);
+      text-align: center;
     }
 
     /* SCOTT — muted white, small, spaced */
@@ -1146,17 +1147,16 @@
       animation: introFadeUp 0.9s ease 2.1s forwards;
     }
 
-    /* LANDAU — gold, large, dominant */
+    /* LANDAU — gold, reduced size */
     .intro-landau {
       font-family: 'Jost', sans-serif;
-      font-size: clamp(2.4rem, 6vw, 5rem);
+      font-size: clamp(1.6rem, 3.5vw, 3rem);
       font-weight: 700;
       color: #d4af72;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       line-height: 1;
       opacity: 0;
-      transform: translateY(8px);
       animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 2.2s forwards;
     }
 
