@@ -1086,16 +1086,29 @@
       gap: 0;
     }
 
-    /* eXp — SVG logo mark container */
+    /* eXp — official PNG logo */
     .intro-exp {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
       opacity: 0;
       animation: introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 1.0s forwards;
     }
-    .intro-exp-svg {
-      width: clamp(160px, 28vw, 320px);
+    .intro-exp-img {
+      width: clamp(180px, 28vw, 340px);
       height: auto;
       display: block;
-      filter: drop-shadow(0 0 20px rgba(255,255,255,0.08));
+      filter: drop-shadow(0 0 16px rgba(255,255,255,0.06));
+    }
+    .intro-presents {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(0.6rem, 1vw, 0.75rem);
+      font-weight: 300;
+      letter-spacing: 0.4em;
+      color: rgba(255,255,255,0.35);
+      font-style: italic;
+      text-transform: lowercase;
     }
 
     /* Gold horizontal rule — the divider between eXp and name block */
@@ -1257,28 +1270,10 @@
 
   <!-- Logo — eXp above gold line, name block below left-aligned -->
   <div class="intro-logo-wrap">
-    <!-- eXp SVG logo mark — faithful recreation with disconnected X ascending arm -->
+    <!-- eXp official logo PNG -->
     <div class="intro-exp">
-      <svg class="intro-exp-svg" viewBox="0 0 220 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- e — bold, rounded -->
-        <text x="0" y="58" font-family="Jost,sans-serif" font-size="64" font-weight="800" fill="white" letter-spacing="-2">e</text>
-        <!-- X mark — custom SVG paths to replicate the eXp X with disconnected ascending arm -->
-        <g transform="translate(68, 4)">
-          <!-- Left diagonal: bottom-left to center (full stroke) -->
-          <line x1="2" y1="62" x2="32" y2="28" stroke="white" stroke-width="9" stroke-linecap="round"/>
-          <!-- Right diagonal lower: center to bottom-right -->
-          <line x1="32" y1="28" x2="58" y2="62" stroke="white" stroke-width="9" stroke-linecap="round"/>
-          <!-- Left upper arm: center to top-left -->
-          <line x1="32" y1="28" x2="8" y2="4" stroke="white" stroke-width="9" stroke-linecap="round"/>
-          <!-- Right upper arm DISCONNECTED — floats above with gap, ascending -->
-          <!-- Gap starts at ~top-right of X, floats higher = exponential growth -->
-          <line x1="44" y1="18" x2="64" y2="0" stroke="white" stroke-width="9" stroke-linecap="round"/>
-        </g>
-        <!-- p — bold -->
-        <text x="140" y="58" font-family="Jost,sans-serif" font-size="64" font-weight="800" fill="white" letter-spacing="-2">p</text>
-        <!-- presents — small italic below -->
-        <text x="2" y="72" font-family="Jost,sans-serif" font-size="10" font-weight="300" fill="rgba(255,255,255,0.4)" letter-spacing="6" font-style="italic">presents</text>
-      </svg>
+      <img src="exp-logo-white.png" alt="eXp Realty" class="intro-exp-img"/>
+      <div class="intro-presents">presents</div>
     </div>
     <div class="intro-rule"></div>
     <div class="intro-right">
@@ -1305,41 +1300,13 @@
 ══════════════════════════════════════ -->
 <nav id="navbar">
 <div class="nav-logo" style="display:flex;align-items:center;">
-<svg class="site-logo-svg" viewBox="0 0 310 54" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:42px;width:auto;overflow:visible;">
-<defs>
-<style>
-.logo-exp{animation:logoFadeIn 1.2s ease forwards;opacity:0;}
-.logo-div{animation:logoFadeIn 1.4s ease forwards;opacity:0;}
-.logo-scott{animation:logoFadeIn 1.6s ease forwards;opacity:0;}
-.logo-landau{animation:logoFadeIn 1.8s ease forwards;opacity:0;}
-.logo-team{animation:logoFadeIn 2.0s ease forwards;opacity:0;}
-.logo-xline{animation:xPulse 3s ease-in-out 2.2s infinite;}
-@keyframes logoFadeIn{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:translateY(0);}}
-@keyframes xPulse{0%,100%{stroke:#d4af72;}50%{stroke:#f0d9a8;}}
-</style>
-<linearGradient id="gG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#b8965a"/><stop offset="100%" stop-color="#f0d9a8"/></linearGradient>
-</defs>
-<!-- eXp -->
-<g class="logo-exp">
-<text x="0" y="36" font-family="Jost,sans-serif" font-size="31" font-weight="700" fill="white">e</text>
-<!-- X with disconnected ascending arm per eXp brand -->
-<g transform="translate(18,4)">
-<line class="la" x1="1" y1="32" x2="15" y2="14" stroke="white" stroke-width="5" stroke-linecap="round"/>
-<line class="la" x1="15" y1="14" x2="28" y2="32" stroke="white" stroke-width="5" stroke-linecap="round"/>
-<line class="la" x1="15" y1="14" x2="3" y2="2" stroke="white" stroke-width="5" stroke-linecap="round"/>
-<line class="logo-xline" x1="20" y1="8" x2="30" y2="-1" stroke="white" stroke-width="5" stroke-linecap="round"/>
-</g>
-<text x="43" y="36" font-family="Jost,sans-serif" font-size="31" font-weight="700" fill="white">p</text>
-</g>
-<!-- divider -->
-<line class="logo-div" x1="78" y1="7" x2="78" y2="47" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
-<!-- SCOTT -->
-<text class="logo-scott" x="90" y="22" font-family="Jost,sans-serif" font-size="8.5" font-weight="400" letter-spacing="4.5" fill="rgba(255,255,255,0.5)">SCOTT</text>
-<!-- LANDAU -->
-<text class="logo-landau" x="88" y="40" font-family="Cormorant Garamond,serif" font-size="21" font-weight="600" letter-spacing="3.5" fill="white">LANDAU</text>
-<!-- TEAM LLC -->
-<text class="logo-team" x="90" y="52" font-family="Jost,sans-serif" font-size="7" font-weight="300" letter-spacing="5" fill="rgba(255,255,255,0.3)">TEAM, LLC</text>
-</svg>
+<img src="exp-logo-white.png" alt="eXp Realty" style="height:28px;width:auto;display:block;opacity:0.92;"/>
+<div style="width:1px;height:28px;background:rgba(255,255,255,0.2);margin:0 16px;"></div>
+<div style="display:flex;flex-direction:column;gap:2px;">
+  <span style="font-family:Jost,sans-serif;font-size:0.6rem;font-weight:300;letter-spacing:0.35em;color:rgba(255,255,255,0.45);text-transform:uppercase;">Scott</span>
+  <span style="font-family:Jost,sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.2em;color:white;text-transform:uppercase;">Landau</span>
+  <span style="font-family:Jost,sans-serif;font-size:0.5rem;font-weight:300;letter-spacing:0.35em;color:rgba(255,255,255,0.3);text-transform:uppercase;">Team, LLC</span>
+</div>
 </div>
 <ul class="nav-center">
 <li><a href="#search">Search</a></li>
