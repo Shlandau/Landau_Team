@@ -250,7 +250,10 @@
     t++;
 
     // Deep dark base
-    ctx.fillStyle = '#080d16';
+    // Navy base matching index.html
+    var bgG = ctx.createLinearGradient(0,0,W,H);
+    bgG.addColorStop(0,'#0d1520'); bgG.addColorStop(0.5,'#111828'); bgG.addColorStop(1,'#0a1020');
+    ctx.fillStyle = bgG;
     ctx.fillRect(0, 0, W, H);
 
     // Single slow-breathing radial glow — centered, very subtle
@@ -258,7 +261,7 @@
     var r = Math.min(W, H) * (0.45 + pulse * 0.08);
     var cx = W * 0.5, cy = H * 0.5;
     var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-    g.addColorStop(0,   'rgba(54,74,116,' + (0.12 + pulse * 0.06) + ')');
+    g.addColorStop(0,   'rgba(54,74,116,' + (0.32 + pulse * 0.12) + ')');
     g.addColorStop(0.5, 'rgba(184,150,90,' + (0.03 + pulse * 0.02) + ')');
     g.addColorStop(1,   'rgba(8,13,22,0)');
     ctx.fillStyle = g;
