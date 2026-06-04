@@ -346,3 +346,24 @@ if (scrollHint) {
     }, 800);
   });
 }
+
+/* ── HAMBURGER MENU ── */
+var hamburger = document.getElementById('navHamburger');
+var mobileMenu = document.getElementById('navMobileMenu');
+
+function closeMobileMenu() {
+  if (hamburger) hamburger.classList.remove('open');
+  if (mobileMenu) mobileMenu.classList.remove('open');
+}
+
+if (hamburger) {
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+}
+
+// Close on scroll
+window.addEventListener('scroll', function() {
+  closeMobileMenu();
+}, { passive: true });
