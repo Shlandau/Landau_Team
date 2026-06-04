@@ -1325,10 +1325,10 @@
 
     /* Tagline */
     .intro-tagline {
-      position: absolute;
+      position: fixed;
       top: 75%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%,-50%);
       font-family: 'Jost', sans-serif;
       font-size: 0.92rem;
       font-weight: 300;
