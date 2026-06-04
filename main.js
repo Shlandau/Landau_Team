@@ -335,3 +335,14 @@ function dismissIntro() {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') dismissIntro();
 }, {once: true});
+// Scroll hint — dismiss intro and scroll to main content
+var scrollHint = document.querySelector(".intro-scroll-hint");
+if (scrollHint) {
+  scrollHint.addEventListener("click", function() {
+    dismissIntro();
+    setTimeout(function() {
+      var hero = document.getElementById("home");
+      if (hero) hero.scrollIntoView({ behavior: "smooth" });
+    }, 800);
+  });
+}

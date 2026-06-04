@@ -49,11 +49,16 @@
   <!-- Tagline -->
   <div class="intro-tagline">Greater Philadelphia &nbsp;·&nbsp; Luxury Real Estate</div>
 
-  <!-- Enter -->
-  <button class="intro-enter" id="introEnter" onclick="dismissIntro()">
-    <span class="intro-enter-text">Enter</span>
-    <div class="intro-enter-line"></div>
-  </button>
+  <!-- Skip Intro button — top right -->
+  <button class="intro-skip" onclick="dismissIntro()">Skip Intro <i class="fas fa-forward"></i></button>
+
+  <!-- Scroll down indicator — bottom center -->
+  <div class="intro-scroll-hint">
+    <span class="intro-scroll-text">Scroll to explore</span>
+    <div class="intro-scroll-arrow">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
 </div>
 
 <div class="cursor-glow" id="cursorGlow"></div>
@@ -61,24 +66,24 @@
      NAVBAR
 ══════════════════════════════════════ -->
 <nav id="navbar">
-<!-- Fix 2: Logo links back to top -->
-<a href="#home" class="nav-logo" style="display:flex;flex-direction:row;align-items:center;gap:0;text-decoration:none;">
-  <img src="exp-logo-white.png" alt="eXp Realty" style="height:40px;width:auto;opacity:0.58;display:block;flex-shrink:0;"/>
-  <div style="width:1px;height:44px;background:linear-gradient(to bottom,transparent,rgba(212,175,114,0.45),transparent);margin:0 22px;flex-shrink:0;"></div>
-  <div style="display:flex;flex-direction:column;justify-content:center;gap:3px;">
-    <span style="font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:300;letter-spacing:0.22em;color:rgba(255,255,255,0.42);text-transform:uppercase;line-height:1.2;display:block;text-align:left;">SCOTT</span>
-    <span style="font-family:'Jost',sans-serif;font-size:1.21rem;font-weight:700;letter-spacing:0.18em;color:rgba(232,201,122,0.92);text-transform:uppercase;line-height:1.1;display:block;">LANDAU</span>
-    <span style="font-family:'Jost',sans-serif;font-size:0.52rem;font-weight:300;letter-spacing:0.08em;color:rgba(212,175,114,0.72);text-transform:uppercase;line-height:1.2;display:block;text-align:right;white-space:nowrap;">TEAM, LLC</span>
-  </div>
-</a>
-<!-- Fix 1: Horizontal TOC nav links -->
-<ul class="nav-center">
-<li><a href="#search">Search</a></li>
-<li><a href="#markets">Markets</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#insights">Insights</a></li>
-</ul>
+  <!-- Logo — left side, links back to top -->
+  <a href="#home" class="nav-logo" style="display:inline-flex;flex-direction:row;align-items:center;gap:0;text-decoration:none;flex-shrink:0;">
+    <img src="exp-logo-white.png" alt="eXp Realty" style="height:40px;width:auto;opacity:0.58;display:block;flex-shrink:0;"/>
+    <div style="width:1px;height:44px;background:linear-gradient(to bottom,transparent,rgba(212,175,114,0.45),transparent);margin:0 18px;flex-shrink:0;"></div>
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:3px;">
+      <span style="font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:300;letter-spacing:0.22em;color:rgba(255,255,255,0.42);text-transform:uppercase;line-height:1.2;display:block;text-align:left;">SCOTT</span>
+      <span style="font-family:'Jost',sans-serif;font-size:1.21rem;font-weight:700;letter-spacing:0.18em;color:rgba(232,201,122,0.92);text-transform:uppercase;line-height:1.1;display:block;">LANDAU</span>
+      <span style="font-family:'Jost',sans-serif;font-size:0.52rem;font-weight:300;letter-spacing:0.08em;color:rgba(212,175,114,0.72);text-transform:uppercase;line-height:1.2;display:block;text-align:right;white-space:nowrap;">TEAM, LLC</span>
+    </div>
+  </a>
+  <!-- Nav links — right side, horizontal -->
+  <ul class="nav-center">
+    <li><a href="#search">Search</a></li>
+    <li><a href="#markets">Markets</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#insights">Insights</a></li>
+  </ul>
 </nav>
 <!-- ══════════════════════════════════════
      HERO
