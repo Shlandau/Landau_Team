@@ -96,6 +96,7 @@
     .nav-center a:hover::after { transform: scaleX(1); }
 
     .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-phone {
       font-size: 0.72rem; letter-spacing: 0.12em;
       color: var(--gold2); text-decoration: none;
       font-weight: 500;

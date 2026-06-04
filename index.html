@@ -61,21 +61,17 @@
      NAVBAR
 ══════════════════════════════════════ -->
 <nav id="navbar">
-<div class="nav-logo" style="display:flex;flex-direction:row;align-items:center;gap:0;">
-  <!-- eXp official PNG — +20% larger -->
+<!-- Fix 2: Logo links back to top -->
+<a href="#home" class="nav-logo" style="display:flex;flex-direction:row;align-items:center;gap:0;text-decoration:none;">
   <img src="exp-logo-white.png" alt="eXp Realty" style="height:40px;width:auto;opacity:0.58;display:block;flex-shrink:0;"/>
-  <!-- Thin gold vertical divider -->
   <div style="width:1px;height:44px;background:linear-gradient(to bottom,transparent,rgba(212,175,114,0.45),transparent);margin:0 22px;flex-shrink:0;"></div>
-  <!-- Scott Landau Team LLC — vertical stack, SCOTT above L-N, TEAM LLC below D-U -->
   <div style="display:flex;flex-direction:column;justify-content:center;gap:3px;">
-    <!-- SCOTT: above LANDAU, left-aligned, spans L→N -->
     <span style="font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:300;letter-spacing:0.22em;color:rgba(255,255,255,0.42);text-transform:uppercase;line-height:1.2;display:block;text-align:left;">SCOTT</span>
-    <!-- LANDAU: anchor -->
     <span style="font-family:'Jost',sans-serif;font-size:1.21rem;font-weight:700;letter-spacing:0.18em;color:rgba(232,201,122,0.92);text-transform:uppercase;line-height:1.1;display:block;">LANDAU</span>
-    <!-- TEAM, LLC: below LANDAU, right-aligned, fits D→U -->
     <span style="font-family:'Jost',sans-serif;font-size:0.52rem;font-weight:300;letter-spacing:0.08em;color:rgba(212,175,114,0.72);text-transform:uppercase;line-height:1.2;display:block;text-align:right;white-space:nowrap;">TEAM, LLC</span>
   </div>
-</div>
+</a>
+<!-- Fix 1: Horizontal TOC nav links -->
 <ul class="nav-center">
 <li><a href="#search">Search</a></li>
 <li><a href="#markets">Markets</a></li>
@@ -83,6 +79,11 @@
 <li><a href="#about">About</a></li>
 <li><a href="#insights">Insights</a></li>
 </ul>
+<!-- Fix 3 & 4: Call Us + SMS Message Us -->
+<div class="nav-right">
+<a class="nav-phone" href="tel:+19086720881"><i class="fas fa-phone" style="font-size:0.65rem;margin-right:6px;"></i> Call Us</a>
+<a class="nav-btn" href="sms:+19086720881?body=Hi%20Scott%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20real%20estate%20services."><i class="fas fa-comment-dots" style="margin-right:6px;"></i> Message Us</a>
+</div>
 </nav>
 <!-- ══════════════════════════════════════
      HERO
@@ -509,7 +510,7 @@
 <h2 class="display-title" style="color:var(--white); text-align:center;">Ready to Make<br/><em>Your Move?</em></h2>
 <p class="body-text" style="color:rgba(255,255,255,0.5); text-align:center; margin:20px auto 48px;">Whether you're buying, selling, or simply exploring — Scott and his team are ready to guide you with expertise, integrity, and care.</p>
 <div class="cta-actions">
-<a class="btn-gold" href="tel:+1"><i class="fas fa-phone"></i> Call Scott Today</a>
+<a class="btn-gold" href="tel:+19086720881"><i class="fas fa-phone"></i> Call Us Today</a>
 <a class="btn-ghost" href="mailto:scott@scottlandauteam.com"><i class="fas fa-envelope"></i> Send a Message</a>
 <a class="btn-ghost" href="#"><i class="fas fa-calculator"></i> Free Home Valuation</a>
 </div>
@@ -603,8 +604,8 @@
      FLOATING ACTIONS
 ══════════════════════════════════════ -->
 <div class="float-actions">
-<a class="fab fab-primary" href="tel:+1"><i class="fas fa-phone"></i> Call Scott</a>
-<a class="fab fab-secondary" href="#contact"><i class="fas fa-comment-dots"></i> Message Us</a>
+<a class="fab fab-primary" href="tel:+19086720881"><i class="fas fa-phone"></i> Call Us</a>
+<a class="fab fab-secondary" href="sms:+19086720881?body=Hi%20Scott%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20real%20estate%20services."><i class="fas fa-comment-dots"></i> Message Us</a>
 </div>
 <!-- ══════════════════════════════════════
      SCRIPTS
