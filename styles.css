@@ -44,7 +44,7 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 1000;
-      display: flex; align-items: center; justify-content: flex-start; gap: 48px;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 0 60px;
       height: 80px;
       transition: all 0.4s ease;
@@ -77,7 +77,8 @@
     }
 
     .nav-center {
-      display: flex; gap: 40px; list-style: none;
+      display: flex; flex-direction: row; gap: 40px; list-style: none;
+      align-items: center;
     }
     .nav-center a {
       font-size: 0.72rem; font-weight: 500;
@@ -979,9 +980,9 @@
       .footer-top { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
-      nav { padding: 0 16px; gap: 16px; }
-      .nav-center { display: flex; gap: 14px; }
-      .nav-center a { font-size: 0.6rem; letter-spacing: 0.08em; }
+      nav { padding: 0 16px; }
+      .nav-center { display: flex; flex-direction: row; gap: 12px; }
+      .nav-center a { font-size: 0.58rem; letter-spacing: 0.06em; }
       .section, .markets-section,
       .services-section, .testimonials-section,
       .insights-section, .cta-section { padding: 80px 24px; }
