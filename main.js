@@ -249,22 +249,42 @@
   function draw() {
     t++;
 
-    // Deep dark base
-    // Navy base matching index.html
-    var bgG = ctx.createLinearGradient(0,0,W,H);
-    bgG.addColorStop(0,'#0d1520'); bgG.addColorStop(0.5,'#111828'); bgG.addColorStop(1,'#0a1020');
+    // Deep navy base — eXp brand blue #364A74
+    var bgG = ctx.createLinearGradient(0, 0, W, H);
+    bgG.addColorStop(0,   '#0e1a2e');
+    bgG.addColorStop(0.4, '#162340');
+    bgG.addColorStop(0.7, '#1a2d52');
+    bgG.addColorStop(1,   '#0e1a2e');
     ctx.fillStyle = bgG;
     ctx.fillRect(0, 0, W, H);
 
-    // Single slow-breathing radial glow — centered, very subtle
+    // Large blue atmosphere — fills most of the screen
     var pulse = 0.5 + 0.5 * Math.sin(t * 0.004);
-    var r = Math.min(W, H) * (0.45 + pulse * 0.08);
+    var r1 = Math.min(W, H) * (0.85 + pulse * 0.08);
     var cx = W * 0.5, cy = H * 0.5;
-    var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-    g.addColorStop(0,   'rgba(54,74,116,' + (0.32 + pulse * 0.12) + ')');
-    g.addColorStop(0.5, 'rgba(184,150,90,' + (0.03 + pulse * 0.02) + ')');
-    g.addColorStop(1,   'rgba(8,13,22,0)');
-    ctx.fillStyle = g;
+    var g1 = ctx.createRadialGradient(cx, cy, 0, cx, cy, r1);
+    g1.addColorStop(0,   'rgba(54,74,116,' + (0.55 + pulse * 0.15) + ')');
+    g1.addColorStop(0.4, 'rgba(54,74,116,' + (0.30 + pulse * 0.08) + ')');
+    g1.addColorStop(0.75,'rgba(30,50,90,'  + (0.15 + pulse * 0.05) + ')');
+    g1.addColorStop(1,   'rgba(14,26,46,0)');
+    ctx.fillStyle = g1;
+    ctx.fillRect(0, 0, W, H);
+
+    // Secondary blue accent — upper area
+    var r2 = Math.min(W, H) * (0.5 + pulse * 0.06);
+    var g2 = ctx.createRadialGradient(cx, H * 0.3, 0, cx, H * 0.3, r2);
+    g2.addColorStop(0,   'rgba(80,110,180,' + (0.22 + pulse * 0.08) + ')');
+    g2.addColorStop(0.5, 'rgba(54,74,116,'  + (0.10 + pulse * 0.04) + ')');
+    g2.addColorStop(1,   'rgba(14,26,46,0)');
+    ctx.fillStyle = g2;
+    ctx.fillRect(0, 0, W, H);
+
+    // Subtle gold warmth at center
+    var r3 = Math.min(W, H) * 0.3;
+    var g3 = ctx.createRadialGradient(cx, cy, 0, cx, cy, r3);
+    g3.addColorStop(0,   'rgba(184,150,90,' + (0.06 + pulse * 0.03) + ')');
+    g3.addColorStop(1,   'rgba(184,150,90,0)');
+    ctx.fillStyle = g3;
     ctx.fillRect(0, 0, W, H);
 
     // Single horizontal shimmer line that drifts slowly
