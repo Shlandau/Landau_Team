@@ -939,24 +939,17 @@
     .footer-col ul li a:hover { color: var(--gold2); }
     .footer-bottom {
       max-width: 1280px; margin: 0 auto;
-      display: flex; justify-content: space-between;
-      align-items: center; flex-wrap: wrap; gap: 12px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex; flex-direction: column;
+      align-items: center; gap: 8px;
+      text-align: center;
     }
     .footer-bottom p {
       font-size: 0.72rem; font-weight: 300;
-      color: rgba(255,255,255,0.2);
       letter-spacing: 0.04em;
     }
-    .footer-exp {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 0.68rem; font-weight: 400;
-      color: rgba(255,255,255,0.2);
-      letter-spacing: 0.1em;
-    }
-    .footer-exp-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--gold);
-    }
+
 
     /* ══════════════════════════════════════
        FLOATING ACTIONS
