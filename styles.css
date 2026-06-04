@@ -1335,6 +1335,7 @@
       letter-spacing: 0.3em;
       color: rgba(255,255,255,0.22);
       text-transform: uppercase;
+      text-align: center;
       white-space: nowrap;
       opacity: 0;
       animation: introFadeUp 1s ease 2.9s forwards;
