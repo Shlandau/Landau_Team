@@ -65,17 +65,15 @@
      NAVBAR
 ══════════════════════════════════════ -->
 <nav id="navbar">
-  <!-- Logo — left side, links back to top -->
-  <a href="#home" class="nav-logo" style="display:inline-flex;flex-direction:row;align-items:center;gap:0;text-decoration:none;flex-shrink:0;">
-    <img src="exp-logo-white.png" alt="eXp Realty" style="height:40px;width:auto;opacity:0.58;display:block;flex-shrink:0;"/>
-    <div style="width:1px;height:44px;background:linear-gradient(to bottom,transparent,rgba(212,175,114,0.45),transparent);margin:0 18px;flex-shrink:0;"></div>
-    <div style="display:flex;flex-direction:column;justify-content:center;gap:3px;">
-      <span style="font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:300;letter-spacing:0.22em;color:rgba(255,255,255,0.42);text-transform:uppercase;line-height:1.2;display:block;text-align:left;">SCOTT</span>
-      <span style="font-family:'Jost',sans-serif;font-size:1.21rem;font-weight:700;letter-spacing:0.18em;color:rgba(232,201,122,0.92);text-transform:uppercase;line-height:1.1;display:block;">LANDAU</span>
-      <span style="font-family:'Jost',sans-serif;font-size:0.52rem;font-weight:300;letter-spacing:0.08em;color:rgba(212,175,114,0.72);text-transform:uppercase;line-height:1.2;display:block;text-align:right;white-space:nowrap;">TEAM, LLC</span>
+  <a href="#home" class="nav-logo">
+    <img src="exp-logo-white.png" alt="eXp Realty" class="nav-exp-logo"/>
+    <div class="nav-divider"></div>
+    <div class="nav-name-block">
+      <span class="nav-scott">SCOTT</span>
+      <span class="nav-landau">LANDAU</span>
+      <span class="nav-team">TEAM, LLC</span>
     </div>
   </a>
-  <!-- Nav links — right side, horizontal (desktop) -->
   <ul class="nav-center">
     <li><a href="#search">Search</a></li>
     <li><a href="#markets">Markets</a></li>
@@ -83,19 +81,17 @@
     <li><a href="#about">About</a></li>
     <li><a href="#insights">Insights</a></li>
   </ul>
-  <!-- Hamburger — mobile only -->
   <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <a href="#search" onclick="closeMobileMenu()">Search</a>
+    <a href="#markets" onclick="closeMobileMenu()">Markets</a>
+    <a href="#services" onclick="closeMobileMenu()">Services</a>
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#insights" onclick="closeMobileMenu()">Insights</a>
+  </div>
 </nav>
-<!-- Mobile dropdown menu -->
-<div class="nav-mobile-menu" id="navMobileMenu">
-  <a href="#search" onclick="closeMobileMenu()">Search</a>
-  <a href="#markets" onclick="closeMobileMenu()">Markets</a>
-  <a href="#services" onclick="closeMobileMenu()">Services</a>
-  <a href="#about" onclick="closeMobileMenu()">About</a>
-  <a href="#insights" onclick="closeMobileMenu()">Insights</a>
-</div>
 <!-- ══════════════════════════════════════
      HERO
 ══════════════════════════════════════ -->
