@@ -1326,7 +1326,7 @@
     /* Tagline */
     .intro-tagline {
       position: absolute;
-      bottom: 15vh;
+      bottom: 25%;
       left: 50%;
       transform: translateX(-50%);
       font-family: 'Jost', sans-serif;
