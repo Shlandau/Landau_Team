@@ -979,8 +979,9 @@
       .footer-top { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
-      nav { padding: 0 24px; }
-      .nav-center { display: none; }
+      nav { padding: 0 16px; gap: 16px; }
+      .nav-center { display: flex; gap: 14px; }
+      .nav-center a { font-size: 0.6rem; letter-spacing: 0.08em; }
       .section, .markets-section,
       .services-section, .testimonials-section,
       .insights-section, .cta-section { padding: 80px 24px; }
