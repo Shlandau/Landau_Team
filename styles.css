@@ -1273,7 +1273,7 @@
       font-family: 'Jost', sans-serif;
       font-size: clamp(1.6rem, 3.5vw, 3rem);
       font-weight: 700;
-      color: #e8c97a;
+      color: rgba(232,201,122,0.92);
       letter-spacing: 0.18em;
       text-transform: uppercase;
       line-height: 1;
