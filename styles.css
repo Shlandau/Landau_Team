@@ -1324,10 +1324,8 @@
     /* TEAM LLC — handled by inline SVG */
 
     /* Tagline */
-    .intro-tagline {
-      position: absolute;
-      bottom: 14vh;
-      left: 0; right: 0;
+        .intro-tagline {
+      position: relative;
       font-family: 'Jost', sans-serif;
       font-size: 0.68rem;
       font-weight: 300;
@@ -1336,6 +1334,7 @@
       text-transform: uppercase;
       text-align: center;
       width: 100%;
+      margin-top: 32px;
       opacity: 0;
       animation: introFadeUp 1s ease 2.9s forwards;
     }
@@ -1402,10 +1401,8 @@
     body.intro-active { overflow: hidden; }
 
     /* Skip Intro button */
-    .intro-skip {
-      position: absolute;
-      bottom: 5vh; left: 0; right: 0;
-      margin: 0 auto;
+        .intro-skip {
+      position: relative;
       background: transparent;
       border: 1px solid rgba(255,255,255,0.18);
       color: rgba(255,255,255,0.4);
@@ -1414,6 +1411,7 @@
       letter-spacing: 0.22em; text-transform: uppercase;
       padding: 10px 28px; cursor: pointer;
       z-index: 10; white-space: nowrap;
+      margin-top: 20px;
       opacity: 0;
       animation: introFadeUp 0.8s ease 3.8s forwards;
       transition: all 0.25s;
