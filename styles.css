@@ -1324,7 +1324,7 @@
     /* TEAM LLC — handled by inline SVG */
 
     /* Tagline */
-        .intro-tagline {
+            .intro-tagline {
       position: relative;
       font-family: 'Jost', sans-serif;
       font-size: 0.68rem;
@@ -1333,7 +1333,7 @@
       color: rgba(255,255,255,0.35);
       text-transform: uppercase;
       text-align: center;
-      width: 100%;
+      align-self: center;
       margin-top: 32px;
       opacity: 0;
       animation: introFadeUp 1s ease 2.9s forwards;
@@ -1401,8 +1401,9 @@
     body.intro-active { overflow: hidden; }
 
     /* Skip Intro button */
-        .intro-skip {
+            .intro-skip {
       position: relative;
+      align-self: center;
       background: transparent;
       border: 1px solid rgba(255,255,255,0.18);
       color: rgba(255,255,255,0.4);
