@@ -97,29 +97,6 @@
     }
 
     /* Mobile menu — hidden by default */
-    .nav-mobile-menu {
-      display: none;
-      position: absolute; top: 100%; left: 0; right: 0;
-      background: rgba(10,15,26,0.97);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(184,150,90,0.15);
-      padding: 16px 24px;
-      flex-direction: column; gap: 0;
-      z-index: 999;
-    }
-    .nav-mobile-menu.open { display: flex; }
-    .nav-mobile-menu a {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.78rem; font-weight: 500;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(255,255,255,0.7); text-decoration: none;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      transition: color 0.2s;
-    }
-    .nav-mobile-menu a:last-child { border-bottom: none; }
-    .nav-mobile-menu a:hover { color: var(--gold2); }
-
     .nav-center {
       display: flex; flex-direction: row; gap: 40px; list-style: none;
       align-items: center;
@@ -1167,14 +1144,6 @@
     }
 
     /* Logo container — horizontal lockup */
-    .intro-logo-wrap {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 0;
-    }
     /* Vertical divider between eXp and right block */
     .intro-divider {
       width: 1px;
@@ -1185,12 +1154,6 @@
       animation: introFadeUp 0.8s ease 1.5s forwards;
     }
     /* Right side stack */
-    .intro-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2px;
-    }
 
     /* ── INTRO LOGO — Star of the splash ── */
 
