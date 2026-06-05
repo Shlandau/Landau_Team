@@ -1327,18 +1327,15 @@
     .intro-tagline {
       position: absolute;
       bottom: 14vh;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0; right: 0;
       font-family: 'Jost', sans-serif;
       font-size: 0.68rem;
       font-weight: 300;
       letter-spacing: 0.3em;
       color: rgba(255,255,255,0.35);
       text-transform: uppercase;
-      display: flex; flex-direction: column;
-      align-items: center;
       text-align: center;
-      white-space: nowrap;
+      width: 100%;
       opacity: 0;
       animation: introFadeUp 1s ease 2.9s forwards;
     }
@@ -1407,8 +1404,8 @@
     /* Skip Intro button */
     .intro-skip {
       position: absolute;
-      bottom: 5vh; left: 50%;
-      transform: translateX(-50%);
+      bottom: 5vh; left: 0; right: 0;
+      margin: 0 auto;
       background: transparent;
       border: 1px solid rgba(255,255,255,0.18);
       color: rgba(255,255,255,0.4);
