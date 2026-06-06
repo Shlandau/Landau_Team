@@ -1147,7 +1147,7 @@
     /* Vertical divider between eXp and right block */
     .intro-divider {
       width: 1px;
-      height: 24px;
+      height: 44px;
       background: rgba(255,255,255,0.22);
       margin: 0 22px;
       opacity: 0;
