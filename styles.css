@@ -1298,7 +1298,7 @@
       text-transform: uppercase;
       text-align: center;
       align-self: center;
-      margin-top: 75px;
+      margin-top: 125px;
       opacity: 0;
       animation: introFadeUp 1s ease 2.9s forwards;
     }
