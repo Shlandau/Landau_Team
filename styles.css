@@ -1147,7 +1147,7 @@
     /* Vertical divider between eXp and right block */
     .intro-divider {
       width: 1px;
-      height: 44px;
+      height: 24px;
       background: rgba(255,255,255,0.22);
       margin: 0 22px;
       opacity: 0;
@@ -1297,7 +1297,7 @@
       text-transform: uppercase;
       text-align: center;
       align-self: center;
-      margin-top: 150px;
+      margin-top: 75px;
       opacity: 0;
       animation: introFadeUp 1s ease 2.9s forwards;
     }
