@@ -221,7 +221,7 @@
     .hero-sub {
       font-size: 0.95rem; font-weight: 300;
       color: rgba(255,255,255,0.55);
-      line-height: 1.9; max-width: 460px;
+      line-height: 1.9; max-width: 500px;
       margin-bottom: 44px;
       letter-spacing: 0.03em;
     }
