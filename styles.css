@@ -1378,7 +1378,7 @@
       z-index: 10; white-space: nowrap;
       margin-top: 70px;
       opacity: 0;
-      animation: introFadeUp 0.8s ease 3.8s forwards;
+      /* animation: introFadeUp 0.8s ease 3.8s forwards; */
       transition: all 0.25s;
     }
     .intro-skip:hover {
