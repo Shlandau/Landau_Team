@@ -198,7 +198,7 @@
       background: var(--gold2);
     }
     .hero-eyebrow-text {
-      font-size: 0.65rem; font-weight: 500;
+      font-size: 0.85rem; font-weight: 700;
       letter-spacing: 0.3em; text-transform: uppercase;
       color: var(--gold2);
     }
