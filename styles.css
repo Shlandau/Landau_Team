@@ -221,7 +221,7 @@
     .hero-sub {
       font-size: 0.95rem; font-weight: 300;
       color: rgba(255,255,255,0.55);
-      line-height: 1.9; max-width: 700px;
+      line-height: 1.9; max-width: 600px;
       margin-bottom: 44px;
       letter-spacing: 0.03em;
     }
@@ -1379,7 +1379,7 @@
       margin-top: 70px;
       opacity: 0;
       /* animation: introFadeUp 0.8s ease 3.8s forwards; */
-      /* transition: all 0.25s; */
+      transition: all 0.0s;
     }
     .intro-skip:hover {
       border-color: rgba(212,175,114,0.5);
