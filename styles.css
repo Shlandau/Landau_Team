@@ -98,7 +98,7 @@
 
     /* Mobile menu — hidden by default */
     .nav-center {
-      display: flex; flex-direction: row; gap: 40px; list-style: none;
+      display: flex; flex-direction: row; gap: 25px; list-style: none;
       align-items: center;
     }
     .nav-center a {
