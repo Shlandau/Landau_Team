@@ -386,9 +386,23 @@
     ══════════════════════════════════════ */
     .search-section {
       background: var(--cream);
-      position: flex;
-      align-items: center;
-      padding: 64px 60px;
+      padding: 56px 0;
+      width: 100%;
+    }
+
+    .search-section .search-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    .search-section iframe {
+      width: 100%;
+      display: block;
+      border: none;
+      min-height: 500px;
+      transition: height 0.3s ease;
     }
     .search-inner {
       max-width: 1100px; margin: 0 auto;
@@ -1096,7 +1110,7 @@
       .services-right { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; }
       .cta-trust { gap: 24px; flex-wrap: wrap; }
-      .search-section { padding: 48px 24px; }
+      .search-section { padding: 40px 0; }
     }
 
     /* ══════════════════════════════════════

@@ -7,85 +7,77 @@
 <title>Scott Landau Team | Luxury Real Estate · Greater Philadelphia</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&amp;family=Jost:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css?v=1780594445"/>
+<link href="styles.css?v=1780594445" rel="stylesheet"/>
 </head>
 <body>
 <!-- Cursor glow -->
-
 <!-- ══════════════════════════════════════
      INTRO SPLASH SCREEN
 ══════════════════════════════════════ -->
 <div id="intro">
-  <canvas id="intro-canvas"></canvas>
-  <div class="intro-line"></div>
-
-  <!-- Corner accents -->
-  <div class="intro-corner tl"></div>
-  <div class="intro-corner tr"></div>
-  <div class="intro-corner bl"></div>
-  <div class="intro-corner br"></div>
-
-  <!-- Logo — entire block centered on page, text left-aligned within -->
-  <div class="intro-logo-wrap">
-    <div class="intro-logo-inner">
-      <!-- eXp official PNG logo — sized to match LANDAU -->
-      <div class="intro-exp">
-        <img src="exp-logo-white.png" alt="eXp Realty" class="intro-exp-img"/>
-        <div class="intro-presents">presents</div>
-      </div>
-      <!-- Short gold divider — immediately below eXp logo, above name block -->
-      <div style="width:clamp(120px,18vw,220px);height:1px;background:linear-gradient(to right,transparent,rgba(212,175,114,0.6),transparent);margin:10px auto 24px;opacity:0;animation:introFadeUp 0.8s ease 1.8s forwards;"></div>
-      <div style="display:flex;flex-direction:column;justify-content:center;gap:4px;">
-        <!-- SCOTT: left-aligned -->
-        <span style="font-family:'Jost',sans-serif;font-size:1.90rem;font-weight:300;letter-spacing:0.22em;color:rgba(255,255,255,0.88);text-transform:uppercase;line-height:1.2;display:block;text-align:left;opacity:0;animation:introFadeUp 0.9s ease 2.9s forwards;">SCOTT</span>
-        <!-- LANDAU: anchor -->
-        <span style="font-family:'Jost',sans-serif;font-size:3rem;font-weight:700;letter-spacing:0.18em;color:rgba(232,201,122,0.92);text-transform:uppercase;line-height:1.1;display:block;opacity:0;animation:introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 3.0s forwards;">LANDAU</span>
-        <!-- TEAM LLC: right-aligned -->
-        <span style="font-family:'Jost',sans-serif;font-size:1.75rem;font-weight:300;letter-spacing:0.18em;color:rgba(240,210,130,0.95);text-transform:uppercase;line-height:1.2;display:block;text-align:right;text-align-last:right;margin-left:20%;white-space:nowrap;opacity:0;animation:introFadeUp 0.9s ease 3.4s forwards;">TEAM, LLC</span>
-      </div>
-    </div>
-  </div>
-
-<!-- Tagline -->
-<div class="intro-tagline">Serving the Greater Philadelphia Area &nbsp;·&nbsp; Luxury Real Estate</div>
-
-  <!-- Skip Intro button — bottom center -->
-  <button class="intro-skip" onclick="dismissIntro()">Skip Intro <i class="fas fa-forward"></i></button>
-
-
+<canvas id="intro-canvas"></canvas>
+<div class="intro-line"></div>
+<!-- Corner accents -->
+<div class="intro-corner tl"></div>
+<div class="intro-corner tr"></div>
+<div class="intro-corner bl"></div>
+<div class="intro-corner br"></div>
+<!-- Logo — entire block centered on page, text left-aligned within -->
+<div class="intro-logo-wrap">
+<div class="intro-logo-inner">
+<!-- eXp official PNG logo — sized to match LANDAU -->
+<div class="intro-exp">
+<img alt="eXp Realty" class="intro-exp-img" src="exp-logo-white.png"/>
+<div class="intro-presents">presents</div>
 </div>
-
+<!-- Short gold divider — immediately below eXp logo, above name block -->
+<div style="width:clamp(120px,18vw,220px);height:1px;background:linear-gradient(to right,transparent,rgba(212,175,114,0.6),transparent);margin:10px auto 24px;opacity:0;animation:introFadeUp 0.8s ease 1.8s forwards;"></div>
+<div style="display:flex;flex-direction:column;justify-content:center;gap:4px;">
+<!-- SCOTT: left-aligned -->
+<span style="font-family:'Jost',sans-serif;font-size:1.90rem;font-weight:300;letter-spacing:0.22em;color:rgba(255,255,255,0.88);text-transform:uppercase;line-height:1.2;display:block;text-align:left;opacity:0;animation:introFadeUp 0.9s ease 2.9s forwards;">SCOTT</span>
+<!-- LANDAU: anchor -->
+<span style="font-family:'Jost',sans-serif;font-size:3rem;font-weight:700;letter-spacing:0.18em;color:rgba(232,201,122,0.92);text-transform:uppercase;line-height:1.1;display:block;opacity:0;animation:introFadeUp 1s cubic-bezier(0.23,1,0.32,1) 3.0s forwards;">LANDAU</span>
+<!-- TEAM LLC: right-aligned -->
+<span style="font-family:'Jost',sans-serif;font-size:1.75rem;font-weight:300;letter-spacing:0.18em;color:rgba(240,210,130,0.95);text-transform:uppercase;line-height:1.2;display:block;text-align:right;text-align-last:right;margin-left:20%;white-space:nowrap;opacity:0;animation:introFadeUp 0.9s ease 3.4s forwards;">TEAM, LLC</span>
+</div>
+</div>
+</div>
+<!-- Tagline -->
+<div class="intro-tagline">Serving the Greater Philadelphia Area  ·  Luxury Real Estate</div>
+<!-- Skip Intro button — bottom center -->
+<button class="intro-skip" onclick="dismissIntro()">Skip Intro <i class="fas fa-forward"></i></button>
+</div>
 <div class="cursor-glow" id="cursorGlow"></div>
 <!-- ══════════════════════════════════════
      NAVBAR
 ══════════════════════════════════════ -->
 <nav id="navbar">
-  <a href="#home" class="nav-logo">
-    <img src="exp-logo-white.png" alt="eXp Realty" class="nav-exp-logo"/>
-    <div class="nav-divider"></div>
-    <div class="nav-name-block">
-      <span class="nav-scott">SCOTT</span>
-      <span class="nav-landau">LANDAU</span>
-      <span class="nav-team">TEAM, LLC</span>
-    </div>
-  </a>
-  <ul class="nav-center">
-    <li><a href="#search">Home Search</a></li>
-    <li><a href="#markets">Markets</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#insights">Insights</a></li>
-  </ul>
-  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-mobile-menu" id="navMobileMenu">
-    <a href="#search" onclick="closeMobileMenu()">Home Search</a>
-    <a href="#markets" onclick="closeMobileMenu()">Markets</a>
-    <a href="#services" onclick="closeMobileMenu()">Services</a>
-    <a href="#about" onclick="closeMobileMenu()">About</a>
-    <a href="#insights" onclick="closeMobileMenu()">Insights</a>
-  </div>
+<a class="nav-logo" href="#home">
+<img alt="eXp Realty" class="nav-exp-logo" src="exp-logo-white.png"/>
+<div class="nav-divider"></div>
+<div class="nav-name-block">
+<span class="nav-scott">SCOTT</span>
+<span class="nav-landau">LANDAU</span>
+<span class="nav-team">TEAM, LLC</span>
+</div>
+</a>
+<ul class="nav-center">
+<li><a href="#search">Home Search</a></li>
+<li><a href="#markets">Markets</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#insights">Insights</a></li>
+</ul>
+<button aria-label="Menu" class="nav-hamburger" id="navHamburger">
+<span></span><span></span><span></span>
+</button>
+<div class="nav-mobile-menu" id="navMobileMenu">
+<a href="#search" onclick="closeMobileMenu()">Home Search</a>
+<a href="#markets" onclick="closeMobileMenu()">Markets</a>
+<a href="#services" onclick="closeMobileMenu()">Services</a>
+<a href="#about" onclick="closeMobileMenu()">About</a>
+<a href="#insights" onclick="closeMobileMenu()">Insights</a>
+</div>
 </nav>
 <!-- ══════════════════════════════════════
      HERO
@@ -100,7 +92,6 @@
 <div class="hero-eyebrow-line"></div>
 <div class="hero-eyebrow-text">Greater Philadelphia · Five Counties</div>
 </div>
-
 <p class="hero-sub">White-glove real estate expertise across Philadelphia, Bucks, Chester, Montgomery, and Delaware Counties — guided by integrity, precision, and knowledge.</p>
 </div>
 </div>
@@ -133,8 +124,12 @@
 <!-- ══════════════════════════════════════
      SEARCH
 ══════════════════════════════════════ -->
-<div class="search-section" id="search"><iframe style="width: 960px; height:300px;" src="https://scottlandau.exprealty.com/wide.php" allowtransparency="true" frameBorder="0"> </iframe></div>
-
+<div class="search-section" id="search">
+<div class="search-inner">
+<iframe allowtransparency="true" frameborder="0" id="search-iframe" scrolling="no" src="https://scottlandau.exprealty.com/wide.php" style="width:100%; height:500px; display:block; border:none; transition:height 0.3s ease;">
+</iframe>
+</div>
+</div>
 <!-- <div class="search-section" id="search">
 <div class="search-inner">
 <div class="search-label">Find Your Property</div>
@@ -537,10 +532,9 @@
      FOOTER
 ══════════════════════════════════════ -->
 <footer>
-
 <div class="footer-bottom">
 <p style="color:rgba(232,201,122,0.75);">© 2025 Scott Landau Team · eXp Realty. All rights reserved. Licensed in Pennsylvania.</p>
-<p style="color:rgba(232,201,122,0.75);text-align:center;font-size:0.72rem;letter-spacing:0.08em;">Developed by <a href="https://omni-bits.com" target="_blank" style="color:rgba(232,201,122,0.9);text-decoration:none;">Omni-bits.com</a></p>
+<p style="color:rgba(232,201,122,0.75);text-align:center;font-size:0.72rem;letter-spacing:0.08em;">Developed by <a href="https://omni-bits.com" style="color:rgba(232,201,122,0.9);text-decoration:none;" target="_blank">Omni-bits.com</a></p>
 </div>
 </footer>
 <!-- ══════════════════════════════════════
@@ -554,9 +548,5 @@
      SCRIPTS
 ══════════════════════════════════════ -->
 <script src="main.js?v=1780594445"></script>
-
-
-
-
 </body>
 </html>

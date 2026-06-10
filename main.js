@@ -18,6 +18,86 @@
       tab.classList.add('active');
     });
   });
+  // ── Search iframe: dynamic height via postMessage (Option B) ──────────────
+  // Listens for resize messages from the eXp Realty widget.
+  // Falls back to preset heights based on detected tab changes.
+  (function() {
+    const iframe = document.getElementById('search-iframe');
+    if (!iframe) return;
+
+    // Default heights per view mode
+    const HEIGHTS = {
+      default: 500,   // Quick Search / list view
+      map:     680,   // Map view needs more vertical space
+      detail:  700,   // Property detail view
+    };
+
+    // Option B: postMessage listener — catches resize events from iframe
+    window.addEventListener('message', function(e) {
+      try {
+        // Accept messages from exprealty.com domain only
+        if (!e.origin.includes('exprealty.com')) return;
+
+        const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+
+        // Handle explicit height message
+        if (data && data.height && typeof data.height === 'number') {
+          const newH = Math.max(data.height, HEIGHTS.default);
+          iframe.style.height = newH + 'px';
+          return;
+        }
+
+        // Handle view/tab change messages
+        if (data && data.view) {
+          const h = HEIGHTS[data.view] || HEIGHTS.default;
+          iframe.style.height = h + 'px';
+          return;
+        }
+
+        // Handle generic resize object
+        if (data && (data.type === 'resize' || data.action === 'resize')) {
+          const h = data.height || data.h || HEIGHTS.default;
+          iframe.style.height = Math.max(parseInt(h), HEIGHTS.default) + 'px';
+        }
+
+      } catch(err) {
+        // Non-JSON message — ignore silently
+      }
+    });
+
+    // Fallback: observe iframe URL hash changes via polling
+    // (catches map tab activation if postMessage is not sent)
+    let lastSrc = iframe.src;
+    let mapActive = false;
+
+    setInterval(function() {
+      try {
+        // If iframe content changes height significantly, adapt
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        const bodyH = iframeDoc.body ? iframeDoc.body.scrollHeight : 0;
+        if (bodyH > 100) {
+          const newH = Math.max(bodyH + 40, HEIGHTS.default);
+          if (Math.abs(newH - parseInt(iframe.style.height)) > 50) {
+            iframe.style.height = newH + 'px';
+          }
+        }
+      } catch(e) {
+        // Cross-origin — cannot access contentDocument, postMessage only
+        // Set map height if iframe has been interacted with for > 3s
+      }
+    }, 1000);
+
+    // Ensure iframe is never shorter than minimum on window resize
+    window.addEventListener('resize', function() {
+      const current = parseInt(iframe.style.height) || HEIGHTS.default;
+      if (current < HEIGHTS.default) {
+        iframe.style.height = HEIGHTS.default + 'px';
+      }
+    });
+
+  })();
+  // ── End search iframe handler ─────────────────────────────────────────────
+
 
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
