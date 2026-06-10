@@ -386,6 +386,8 @@
     ══════════════════════════════════════ */
     .search-section {
       background: var(--cream);
+      position: flex;
+      align-items: center;
       padding: 64px 60px;
     }
     .search-inner {
