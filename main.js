@@ -343,7 +343,7 @@ if (scrollHint) {
     setTimeout(function() {
       var hero = document.getElementById("home");
       if (hero) hero.scrollIntoView({ behavior: "smooth" });
-    }, 200);
+    }, 50);
   });
 }
 
